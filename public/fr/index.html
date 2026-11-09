@@ -75,7 +75,14 @@
   .lang li a:hover,.lang li a[aria-current]{color:var(--goldlit);background:#1a1113}
   .nav ul.menu{margin-left:auto}
   .nav .lang{margin-left:0}
-  @media (max-width:760px){.nav ul.menu{display:none}.nav .lang{margin-left:auto}.nav .btn{padding:8px 14px;font-size:.92rem}}
+  .burger{display:none}
+  .burger summary{display:grid;gap:4px;padding:9px 8px;width:34px;height:34px;box-sizing:border-box;align-content:center}
+  .burger summary span{display:block;height:1.5px;background:var(--bone)}
+  .burger summary:hover span{background:var(--goldlit)}
+  @media (max-width:760px){.nav .wrap{gap:10px}.nav ul.menu{display:none}.burger{display:block}.nav .lang{margin-left:auto}.nav .burger{margin-left:0}.nav .btn{padding:8px 12px;font-size:.9rem}}
+  .nav .btn .short{display:none}
+  @media (max-width:560px){.nav .btn .long{display:none}.nav .btn .short{display:inline}}
+  @media (max-width:380px){.brand{font-size:1.15rem}}
 
   /* Boutons */
   .btn{display:inline-block;padding:14px 28px;border-radius:3px;text-decoration:none;font-weight:600;font-size:1.05rem;border:1px solid var(--gold);transition:background .15s,color .15s,border-color .15s}
@@ -94,7 +101,8 @@
   .kicker{font-family:var(--display);font-style:italic;font-size:1.3rem;color:var(--gold);margin:0 0 .8rem}
   .hero h1{font-weight:400;font-size:clamp(3.2rem,7.2vw,6rem);letter-spacing:-.012em;line-height:.95}
   .hero h1 em{font-style:italic;font-weight:500;color:var(--goldlit)}
-  .hero .lede{margin:1.6rem 0 2rem;max-width:30em}
+  .hook{font-family:var(--display);font-style:italic;font-size:clamp(1.5rem,2.6vw,2.1rem);line-height:1.2;color:var(--goldlit);margin:1.4rem 0 0;max-width:22em}
+  .hero .lede{margin:1rem 0 2rem;max-width:30em}
   .hint{font-size:.92rem;color:var(--ash);margin:1.1rem 0 0}
   .proofs{display:flex;flex-wrap:wrap;gap:.4rem 0;list-style:none;padding:0;margin:2.4rem 0 0;font-size:1rem;color:var(--bone)}
   .proofs li{padding-right:1rem;margin-right:1rem;border-right:1px solid var(--gold)}
@@ -200,7 +208,16 @@
       <summary aria-label="Langue">fr</summary>
       <ul><li><a href="/fr/?lang=1" lang="fr" hreflang="fr" aria-current="page">Français</a></li><li><a href="/en/?lang=1" lang="en" hreflang="en">English</a></li><li><a href="/de/?lang=1" lang="de" hreflang="de">Deutsch</a></li><li><a href="/es/?lang=1" lang="es" hreflang="es">Español</a></li><li><a href="/it/?lang=1" lang="it" hreflang="it">Italiano</a></li><li><a href="/tr/?lang=1" lang="tr" hreflang="tr">Türkçe</a></li></ul>
     </details>
-    <a class="btn primary" href="https://game.masterofthenight.com/">Jouer gratuitement</a>
+    <details class="lang burger">
+      <summary aria-label="Menu"><span></span><span></span><span></span></summary>
+      <ul>
+        <li><a href="#jeu">Le jeu</a></li>
+        <li><a href="#apprendre">Apprendre</a></li>
+        <li><a href="#plateformes">Plateformes</a></li>
+        <li><a href="#faq">Questions</a></li>
+      </ul>
+    </details>
+    <a class="btn primary" href="https://game.masterofthenight.com/"><span class="long">Jouer gratuitement</span><span class="short">Jouer</span></a>
   </div>
 </header>
 
@@ -211,27 +228,28 @@
     <div>
       <p class="kicker">Vampire: The Eternal Struggle, dans votre navigateur</p>
       <h1>Master <em>of the</em> Night</h1>
-      <p class="lede">Chassez votre proie. Survivez à votre prédateur. Le jeu de cartes de Richard Garfield sur une vraie table à cinq, avec les règles appliquées pour vous — gratuit, sans rien à installer, sans compte pour commencer.</p>
+      <p class="hook">Chassez votre proie. Survivez à votre prédateur.</p>
+      <p class="lede">Le jeu de cartes de Richard Garfield sur une vraie table à cinq, avec les règles appliquées pour vous — gratuit, sans rien à installer, sans compte pour commencer.</p>
       <div class="actions">
         <a class="btn primary" href="https://game.masterofthenight.com/">Jouer gratuitement</a>
-        <a class="btn ghost" href="#plateformes">Version Windows</a>
+        <a class="btn ghost" href="#plateformes">Comparer les versions</a>
       </div>
       <p class="hint">Le premier lancement prend un moment, le temps de charger les cartes ; ensuite le jeu reste en cache. Un écran de PC ou de tablette est conseillé.</p>
       <ul class="proofs">
-        <li>100 % gratuit</li><li>Sans compte pour commencer</li><li>En ligne, de 1 à 5</li><li>Tutoriel guidé</li>
+        <li>100 % gratuit</li><li>Compte facultatif</li><li>En ligne, de 1 à 5</li><li>Tutoriel guidé</li>
       </ul>
     </div>
     <div>
-      <div class="table" id="table" aria-label="Schéma d'une table à cinq joueurs : proie et prédateur" data-i18n='{&quot;you&quot;: &quot;Vous&quot;, &quot;prey&quot;: &quot;sa proie&quot;, &quot;pred&quot;: &quot;son prédateur&quot;, &quot;seat&quot;: &quot;Siège de&quot;, &quot;you_prey&quot;: &quot;vous&quot;, &quot;you_pred&quot;: &quot;vous&quot;, &quot;you_sentence&quot;: &quot;{who}avez pour proie {prey}&lt;br&gt;et pour prédateur {pred}&quot;, &quot;other_sentence&quot;: &quot;{who}a pour proie {prey}&lt;br&gt;et pour prédateur {pred}&quot;, &quot;ally&quot;: &quot;allié&quot;, &quot;you_ally&quot;: &quot;vous&quot;, &quot;ally_label&quot;: &quot;Alliés de l&#x27;autre côté de la table :&quot;, &quot;ally_sep&quot;: &quot; et &quot;}'>
+      <div class="table" id="table" aria-label="Schéma d'une table à cinq joueurs : proie et prédateur" data-i18n='{&quot;you&quot;: &quot;Vous&quot;, &quot;prey&quot;: &quot;sa proie&quot;, &quot;pred&quot;: &quot;son prédateur&quot;, &quot;seat&quot;: &quot;Siège de&quot;, &quot;you_prey&quot;: &quot;vous&quot;, &quot;you_pred&quot;: &quot;vous&quot;, &quot;you_sentence&quot;: &quot;{who}avez pour proie {prey}&lt;br&gt;et pour prédateur {pred}&quot;, &quot;other_sentence&quot;: &quot;{who}a pour proie {prey}&lt;br&gt;et pour prédateur {pred}&quot;, &quot;ally&quot;: &quot;allié&quot;, &quot;you_ally&quot;: &quot;vous&quot;, &quot;ally_label&quot;: &quot;De l&#x27;autre côté de la table :&quot;, &quot;ally_sep&quot;: &quot; et &quot;}'>
         <svg viewBox="0 0 100 100" aria-hidden="true">
           <circle class="ring" cx="50" cy="50" r="40"/>
           <circle class="felt" cx="50" cy="50" r="27"/>
           <path class="arc prey" id="arcPrey" d=""/>
           <path class="arc pred" id="arcPred" d=""/>
         </svg>
-        <div class="center" id="tableText"><b>Touchez un siège</b>pour voir qui chasse qui</div>
+        <div class="center" id="tableText" aria-live="polite"><b>Touchez un siège</b>pour voir qui chasse qui</div>
       </div>
-      <p class="table-caption">À cinq, chacun attaque le joueur à sa gauche — sa proie — et se défend contre celui de droite — son prédateur. Les deux autres, de l'autre côté de la table, sont vos alliés naturels : rien ne les pousse à vous attaquer. Quand votre proie tombe, sa proie devient la vôtre.</p>
+      <p class="table-caption">À cinq, chacun saigne le joueur à sa gauche — sa proie — et se défend contre celui de droite — son prédateur. Les deux autres ne sont ni l'un ni l'autre : des partenaires de négociation naturels, dont les intérêts ne rejoignent pas toujours les vôtres. Quand votre proie tombe, sa proie devient la vôtre.</p>
     </div>
   </div>
 </div>
@@ -244,7 +262,7 @@
     </div>
     <div>
       <p class="lede">Vous êtes un Mathusalem, un vampire si ancien qu'il n'agit plus que par procuration. Vos pions sont des vampires plus jeunes que vous réveillez un à un, et votre réserve de sang est votre vie : quand elle tombe à zéro, vous sortez de la partie.</p>
-      <p>Ce qui rend VTES unique, c'est la table. On ne joue pas en duel mais à plusieurs, et pas tous contre tous : vous ne pouvez attaquer que votre proie, à votre gauche, pendant que votre prédateur, à votre droite, s'occupe de vous. Un tour de table, ce sont des actions, des blocages, des combats et des référendums où les alliances se nouent et se défont à voix haute.</p>
+      <p>Ce qui rend VTES unique, c'est la table. On ne joue pas en duel mais à plusieurs, et pas tous contre tous : vos attaques ordinaires, les bleeds, ne visent que votre proie, à votre gauche, pendant que votre prédateur, à votre droite, s'occupe de vous. Les votes, certaines cartes et quelques actions permettent d'atteindre le reste de la table. Un tour, ce sont des actions, des blocages, des combats et des référendums où les alliances se nouent et se défont à voix haute.</p>
       <ul class="rules">
         <li><span class="n">I</span><span><b>Réveillez vos vampires.</b> Chaque tour, vous transférez du sang de votre réserve vers votre crypte pour amener de nouveaux vampires à la table.</span></li>
         <li><span class="n">II</span><span><b>Saignez votre proie.</b> Vos vampires agissent : un <em>bleed</em> fait perdre du sang à votre proie, à moins qu'un de ses vampires ne bloque et ne déclenche un combat.</span></li>
@@ -296,7 +314,7 @@
       <details><summary>Faut-il créer un compte ?</summary><p>Pas pour jouer : vous ouvrez la page et vous êtes à la table, tutoriel et parties comprises. Un compte, facultatif, sert à retrouver vos decks d'un lancement à l'autre, et portera les évolutions à venir, comme les statistiques de vos parties. Il ne demande qu'une adresse e-mail, un pseudo et un mot de passe.</p></details>
       <details><summary>Pourquoi le premier chargement est-il long ?</summary><p>Le jeu embarque les textes et les images de toutes les cartes. Votre navigateur les garde en cache après le premier lancement, et les suivants sont bien plus rapides.</p></details>
       <details><summary>Ça marche sur téléphone ?</summary><p>Le jeu se lance sur un téléphone récent, mais une table à cinq avec ses cartes demande de la place : un écran de PC ou de tablette est nettement plus confortable.</p></details>
-      <details><summary>Windows affiche « Windows a protégé votre ordinateur »</summary><p>C'est l'avertissement standard pour un programme qui n'a pas acheté de certificat de signature, ce que le jeu, gratuit, n'a pas fait. Cliquez sur <em>Informations complémentaires</em>, puis <em>Exécuter quand même</em>. L'archive est celle publiée sur itch.io, et uniquement là.</p></details>
+      <details><summary>Windows affiche « Windows a protégé votre ordinateur »</summary><p>Le jeu n'est publié qu'à un seul endroit, la page itch.io : si vous l'avez téléchargé là, c'est le bon fichier. L'avertissement vient de Windows, qui l'affiche pour tout programme n'ayant pas acheté de certificat de signature — ce que ce jeu gratuit n'a pas fait. Cliquez sur <em>Informations complémentaires</em>, puis <em>Exécuter quand même</em>.</p></details>
       <details><summary>Est-ce le même jeu que VTES Mobile ?</summary><p>Oui. VTES Mobile devient Master of the Night ; même table, même moteur, même équipe. La page itch.io garde son ancienne adresse pour que vos liens continuent de fonctionner.</p></details>
       <details><summary>Est-ce un jeu officiel ?</summary><p>Non. Master of the Night est un projet de fans, gratuit et sans achat intégré, publié dans le cadre du programme Dark Pack de Paradox Interactive. Le jeu de cartes Vampire: The Eternal Struggle est édité par Black Chantry Productions, et c'est chez eux qu'on achète les vraies cartes.</p></details>
     </div>
@@ -350,7 +368,7 @@
   var seats = [];
   for (var i = 0; i < N; i++) {
     var b = document.createElement('button');
-    b.type = 'button'; b.className = 'seat';
+    b.type = 'button'; b.className = 'seat'; b.setAttribute('aria-pressed','false');
     var p = pos(i); b.style.left = p[0]+'%'; b.style.top = p[1]+'%';
     b.innerHTML = names[i] + '<small></small>';
     b.setAttribute('aria-label', T.seat + ' ' + names[i]);
@@ -360,7 +378,7 @@
   function show(i){
     var prey = (i+1)%N, pred = (i+N-1)%N;
     seats.forEach(function(s, k){
-      s.classList.remove('me','prey','pred');
+      s.classList.remove('me','prey','pred','ally'); s.setAttribute('aria-pressed', k === i ? 'true' : 'false');
       var tag = s.querySelector('small'); tag.textContent = '';
       if (k === i) s.classList.add('me');
       else if (k === prey) { s.classList.add('prey'); tag.textContent = T.prey; }
@@ -386,6 +404,12 @@
     s.addEventListener('focus', function(){ show(+s.dataset.i); });
   });
 })();
+</script>
+<script>
+document.querySelectorAll('.nav details').forEach(function(d){
+  d.addEventListener('click', function(e){ if (e.target.closest('a')) d.removeAttribute('open'); });
+  document.addEventListener('click', function(e){ if (!d.contains(e.target)) d.removeAttribute('open'); });
+});
 </script>
 </body>
 </html>

@@ -69,7 +69,14 @@
   .lang li a:hover,.lang li a[aria-current]{color:var(--goldlit);background:#1a1113}
   .nav ul.menu{margin-left:auto}
   .nav .lang{margin-left:0}
-  @media (max-width:760px){.nav ul.menu{display:none}.nav .lang{margin-left:auto}.nav .btn{padding:8px 14px;font-size:.92rem}}
+  .burger{display:none}
+  .burger summary{display:grid;gap:4px;padding:9px 8px;width:34px;height:34px;box-sizing:border-box;align-content:center}
+  .burger summary span{display:block;height:1.5px;background:var(--bone)}
+  .burger summary:hover span{background:var(--goldlit)}
+  @media (max-width:760px){.nav .wrap{gap:10px}.nav ul.menu{display:none}.burger{display:block}.nav .lang{margin-left:auto}.nav .burger{margin-left:0}.nav .btn{padding:8px 12px;font-size:.9rem}}
+  .nav .btn .short{display:none}
+  @media (max-width:560px){.nav .btn .long{display:none}.nav .btn .short{display:inline}}
+  @media (max-width:380px){.brand{font-size:1.15rem}}
 
   /* Boutons */
   .btn{display:inline-block;padding:14px 28px;border-radius:3px;text-decoration:none;font-weight:600;font-size:1.05rem;border:1px solid var(--gold);transition:background .15s,color .15s,border-color .15s}
@@ -88,7 +95,8 @@
   .kicker{font-family:var(--display);font-style:italic;font-size:1.3rem;color:var(--gold);margin:0 0 .8rem}
   .hero h1{font-weight:400;font-size:clamp(3.2rem,7.2vw,6rem);letter-spacing:-.012em;line-height:.95}
   .hero h1 em{font-style:italic;font-weight:500;color:var(--goldlit)}
-  .hero .lede{margin:1.6rem 0 2rem;max-width:30em}
+  .hook{font-family:var(--display);font-style:italic;font-size:clamp(1.5rem,2.6vw,2.1rem);line-height:1.2;color:var(--goldlit);margin:1.4rem 0 0;max-width:22em}
+  .hero .lede{margin:1rem 0 2rem;max-width:30em}
   .hint{font-size:.92rem;color:var(--ash);margin:1.1rem 0 0}
   .proofs{display:flex;flex-wrap:wrap;gap:.4rem 0;list-style:none;padding:0;margin:2.4rem 0 0;font-size:1rem;color:var(--bone)}
   .proofs li{padding-right:1rem;margin-right:1rem;border-right:1px solid var(--gold)}
@@ -194,7 +202,16 @@
       <summary aria-label="{{lang_label}}">{{lang}}</summary>
       <ul>{{lang_links}}</ul>
     </details>
-    <a class="btn primary" href="https://game.masterofthenight.com/">{{cta_play}}</a>
+    <details class="lang burger">
+      <summary aria-label="{{nav_menu}}"><span></span><span></span><span></span></summary>
+      <ul>
+        <li><a href="#jeu">{{nav_game}}</a></li>
+        <li><a href="#apprendre">{{nav_learn}}</a></li>
+        <li><a href="#plateformes">{{nav_platforms}}</a></li>
+        <li><a href="#faq">{{nav_faq}}</a></li>
+      </ul>
+    </details>
+    <a class="btn primary" href="https://game.masterofthenight.com/"><span class="long">{{cta_play}}</span><span class="short">{{nav_play}}</span></a>
   </div>
 </header>
 
@@ -205,6 +222,7 @@
     <div>
       <p class="kicker">{{kicker}}</p>
       <h1>Master <em>of the</em> Night</h1>
+      <p class="hook">{{hero_hook}}</p>
       <p class="lede">{{hero_lede}}</p>
       <div class="actions">
         <a class="btn primary" href="https://game.masterofthenight.com/">{{cta_play}}</a>
@@ -223,7 +241,7 @@
           <path class="arc prey" id="arcPrey" d=""/>
           <path class="arc pred" id="arcPred" d=""/>
         </svg>
-        <div class="center" id="tableText"><b>{{table_touch}}</b>{{table_touch2}}</div>
+        <div class="center" id="tableText" aria-live="polite"><b>{{table_touch}}</b>{{table_touch2}}</div>
       </div>
       <p class="table-caption">{{table_caption}}</p>
     </div>
@@ -344,7 +362,7 @@
   var seats = [];
   for (var i = 0; i < N; i++) {
     var b = document.createElement('button');
-    b.type = 'button'; b.className = 'seat';
+    b.type = 'button'; b.className = 'seat'; b.setAttribute('aria-pressed','false');
     var p = pos(i); b.style.left = p[0]+'%'; b.style.top = p[1]+'%';
     b.innerHTML = names[i] + '<small></small>';
     b.setAttribute('aria-label', T.seat + ' ' + names[i]);
@@ -354,7 +372,7 @@
   function show(i){
     var prey = (i+1)%N, pred = (i+N-1)%N;
     seats.forEach(function(s, k){
-      s.classList.remove('me','prey','pred');
+      s.classList.remove('me','prey','pred','ally'); s.setAttribute('aria-pressed', k === i ? 'true' : 'false');
       var tag = s.querySelector('small'); tag.textContent = '';
       if (k === i) s.classList.add('me');
       else if (k === prey) { s.classList.add('prey'); tag.textContent = T.prey; }
@@ -380,6 +398,12 @@
     s.addEventListener('focus', function(){ show(+s.dataset.i); });
   });
 })();
+</script>
+<script>
+document.querySelectorAll('.nav details').forEach(function(d){
+  d.addEventListener('click', function(e){ if (e.target.closest('a')) d.removeAttribute('open'); });
+  document.addEventListener('click', function(e){ if (!d.contains(e.target)) d.removeAttribute('open'); });
+});
 </script>
 </body>
 </html>
