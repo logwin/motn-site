@@ -102,5 +102,40 @@
   "cta_discord": "Join the Discord",
   "cta_feedback_line": "A card misbehaving, an idea? Say so on Discord or on the itch.io page: every report is read.",
   "nav_menu": "Menu",
-  "hero_hook": "Hunt your prey. Survive your predator."
+  "hero_hook": "Hunt your prey. Survive your predator.",
+  "privacy": {
+    "nav_privacy": "Privacy and contact",
+    "title": "Privacy and contact",
+    "updated": "Updated 9 November 2026",
+    "intro": "Master of the Night is a free fan game, with no ads and no in-app purchases. It collects only what it needs to work. This page says what, why, where, and how to have it erased.",
+    "s": [
+      [
+        "Playing without an account",
+        "You can open the game, follow the tutorial and play games without providing anything. The site and the game set no tracking cookies: the site's only cookie remembers your language (\"lang\", one year)."
+      ],
+      [
+        "The optional account",
+        "If you create an account, we store an email address, a nickname and a password. The password is never stored in clear text: it is hashed by the authentication service. The account keeps your decks from one launch to the next and will carry upcoming features, such as statistics on your games."
+      ],
+      [
+        "Where the data lives",
+        "Accounts and decks are stored with Supabase, a database hosting provider, on the infrastructure it runs for us. The site and the game are served by Cloudflare, which keeps technical logs (IP address, pages requested) for security and load measurement. We do not sell, rent or share any data."
+      ],
+      [
+        "Reports sent from the game",
+        "When you report a problem from the game, the text you type and the state of the game in question are sent so that we can reproduce the fault. They are used for nothing else."
+      ],
+      [
+        "Third-party services",
+        "The itch.io page and the Discord server are run by those services, under their own rules. We only see what you post there."
+      ],
+      [
+        "Deleting your account",
+        "Write to us from the account's email address: it is deleted, decks included, within fifteen days. You can also ask for a copy of what we hold about you."
+      ]
+    ],
+    "contact_h": "Write to us",
+    "contact_p": "For any question, deletion request or problem: <a href=\"mailto:contact@masterofthenight.com\">contact@masterofthenight.com</a>. To talk about the game, the <a href=\"https://discord.gg/pVcYAQx2f\">Discord</a>."
+  },
+  "nav_privacy": "Privacy and contact"
 }

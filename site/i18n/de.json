@@ -102,5 +102,40 @@
   "cta_discord": "Dem Discord beitreten",
   "cta_feedback_line": "Eine Karte verhält sich falsch, eine Idee? Sag es auf Discord oder auf der itch.io-Seite: Jede Rückmeldung wird gelesen.",
   "nav_menu": "Menü",
-  "hero_hook": "Jage deine Beute. Überlebe deinen Jäger."
+  "hero_hook": "Jage deine Beute. Überlebe deinen Jäger.",
+  "privacy": {
+    "nav_privacy": "Datenschutz und Kontakt",
+    "title": "Datenschutz und Kontakt",
+    "updated": "Stand: 9. November 2026",
+    "intro": "Master of the Night ist ein kostenloses Fanspiel ohne Werbung und ohne In-App-Käufe. Es erhebt nur, was es zum Funktionieren braucht. Diese Seite sagt was, warum, wo und wie man es löschen lässt.",
+    "s": [
+      [
+        "Spielen ohne Konto",
+        "Du kannst das Spiel öffnen, das Tutorial durchlaufen und Partien spielen, ohne etwas anzugeben. Website und Spiel setzen keine Tracking-Cookies: Das einzige Cookie der Website merkt sich deine Sprache („lang“, ein Jahr)."
+      ],
+      [
+        "Das optionale Konto",
+        "Legst du ein Konto an, speichern wir eine E-Mail-Adresse, einen Spitznamen und ein Passwort. Das Passwort wird nie im Klartext gespeichert: Der Authentifizierungsdienst hasht es. Das Konto bewahrt deine Decks von Start zu Start und trägt kommende Funktionen, etwa Statistiken zu deinen Partien."
+      ],
+      [
+        "Wo die Daten liegen",
+        "Konten und Decks liegen bei Supabase, einem Datenbank-Hoster, auf der Infrastruktur, die er für uns betreibt. Website und Spiel werden von Cloudflare ausgeliefert, das technische Protokolle (IP-Adresse, aufgerufene Seiten) für Sicherheit und Lastmessung führt. Wir verkaufen, vermieten oder teilen keine Daten."
+      ],
+      [
+        "Meldungen aus dem Spiel",
+        "Meldest du aus dem Spiel ein Problem, werden dein eingegebener Text und der Zustand der betroffenen Partie übermittelt, damit wir den Fehler nachstellen können. Sie dienen nur dazu."
+      ],
+      [
+        "Dienste Dritter",
+        "Die itch.io-Seite und der Discord-Server werden von diesen Diensten nach eigenen Regeln betrieben. Wir sehen dort nur, was du veröffentlichst."
+      ],
+      [
+        "Konto löschen",
+        "Schreib uns von der E-Mail-Adresse des Kontos: Es wird samt Decks innerhalb von fünfzehn Tagen gelöscht. Du kannst auch eine Kopie dessen verlangen, was wir über dich gespeichert haben."
+      ]
+    ],
+    "contact_h": "Schreib uns",
+    "contact_p": "Für Fragen, Löschanträge oder Probleme: <a href=\"mailto:contact@masterofthenight.com\">contact@masterofthenight.com</a>. Zum Reden über das Spiel: der <a href=\"https://discord.gg/pVcYAQx2f\">Discord</a>."
+  },
+  "nav_privacy": "Datenschutz und Kontakt"
 }

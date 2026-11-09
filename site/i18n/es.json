@@ -102,5 +102,40 @@
   "cta_discord": "Unirse al Discord",
   "cta_feedback_line": "¿Una carta que se comporta mal, una idea? Dilo en el Discord o en la página de itch.io: cada aviso se lee.",
   "nav_menu": "Menú",
-  "hero_hook": "Caza a tu presa. Sobrevive a tu depredador."
+  "hero_hook": "Caza a tu presa. Sobrevive a tu depredador.",
+  "privacy": {
+    "nav_privacy": "Privacidad y contacto",
+    "title": "Privacidad y contacto",
+    "updated": "Actualizado el 9 de noviembre de 2026",
+    "intro": "Master of the Night es un juego de aficionados, gratuito, sin publicidad y sin compras integradas. Solo recoge lo que necesita para funcionar. Esta página dice qué, por qué, dónde y cómo hacerlo borrar.",
+    "s": [
+      [
+        "Jugar sin cuenta",
+        "Puedes abrir el juego, seguir el tutorial y jugar partidas sin facilitar nada. Ni el sitio ni el juego ponen cookies de seguimiento: la única cookie del sitio recuerda tu idioma («lang», un año)."
+      ],
+      [
+        "La cuenta opcional",
+        "Si creas una cuenta, guardamos un correo electrónico, un apodo y una contraseña. La contraseña nunca se guarda en claro: el servicio de autenticación la cifra con hash. La cuenta conserva tus mazos de una sesión a otra y llevará las funciones que vengan, como las estadísticas de tus partidas."
+      ],
+      [
+        "Dónde están los datos",
+        "Las cuentas y los mazos se almacenan en Supabase, un proveedor de bases de datos, en la infraestructura que opera para nosotros. El sitio y el juego los sirve Cloudflare, que guarda registros técnicos (dirección IP, páginas solicitadas) por seguridad y medición de carga. No vendemos, alquilamos ni compartimos ningún dato."
+      ],
+      [
+        "Los avisos enviados desde el juego",
+        "Cuando informas de un problema desde el juego, se envían el texto que escribes y el estado de la partida afectada para que podamos reproducir el fallo. No sirven para nada más."
+      ],
+      [
+        "Servicios de terceros",
+        "La página de itch.io y el servidor de Discord los gestionan esos servicios, con sus propias normas. Solo vemos lo que publicas allí."
+      ],
+      [
+        "Eliminar la cuenta",
+        "Escríbenos desde el correo de la cuenta: se elimina, mazos incluidos, en un plazo de quince días. También puedes pedir una copia de lo que tenemos sobre ti."
+      ]
+    ],
+    "contact_h": "Escríbenos",
+    "contact_p": "Para cualquier pregunta, solicitud de eliminación o problema: <a href=\"mailto:contact@masterofthenight.com\">contact@masterofthenight.com</a>. Para hablar del juego, el <a href=\"https://discord.gg/pVcYAQx2f\">Discord</a>."
+  },
+  "nav_privacy": "Privacidad y contacto"
 }

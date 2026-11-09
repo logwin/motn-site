@@ -104,5 +104,40 @@
   "cta_discord": "Discord'a katıl",
   "cta_feedback_line": "Yanlış davranan bir kart, bir fikir mi var? Discord'da veya itch.io sayfasında söyleyin: her geri bildirim okunur.",
   "nav_menu": "Menü",
-  "hero_hook": "Avını kovala. Avcından kurtul."
+  "hero_hook": "Avını kovala. Avcından kurtul.",
+  "privacy": {
+    "nav_privacy": "Gizlilik ve iletişim",
+    "title": "Gizlilik ve iletişim",
+    "updated": "Güncelleme: 9 Kasım 2026",
+    "intro": "Master of the Night; ücretsiz, reklamsız ve uygulama içi satın alımsız bir hayran oyunudur. Yalnızca çalışmak için gerekeni toplar. Bu sayfa neyi, neden, nerede ve nasıl sildirebileceğinizi anlatır.",
+    "s": [
+      [
+        "Hesapsız oynamak",
+        "Hiçbir bilgi vermeden oyunu açabilir, öğreticiyi izleyebilir ve oyun oynayabilirsiniz. Site ve oyun izleme çerezi koymaz: sitenin tek çerezi dilinizi hatırlar (\"lang\", bir yıl)."
+      ],
+      [
+        "İsteğe bağlı hesap",
+        "Hesap açarsanız bir e-posta adresi, bir takma ad ve bir şifre kaydederiz. Şifre asla açık metin olarak saklanmaz: kimlik doğrulama servisi tarafından karma (hash) hâlinde tutulur. Hesap, destelerinizi bir açılıştan diğerine saklar ve oyun istatistikleri gibi gelecek özellikleri taşıyacaktır."
+      ],
+      [
+        "Veriler nerede",
+        "Hesaplar ve desteler, bir veritabanı barındırma sağlayıcısı olan Supabase'de, bizim için işlettiği altyapıda saklanır. Site ve oyun, güvenlik ve yük ölçümü için teknik günlükler (IP adresi, istenen sayfalar) tutan Cloudflare tarafından sunulur. Hiçbir veriyi satmayız, kiralamayız ve paylaşmayız."
+      ],
+      [
+        "Oyundan gönderilen bildirimler",
+        "Oyundan bir sorun bildirdiğinizde, yazdığınız metin ve ilgili oyunun durumu, hatayı yeniden üretebilmemiz için gönderilir. Başka hiçbir amaçla kullanılmaz."
+      ],
+      [
+        "Üçüncü taraf hizmetler",
+        "itch.io sayfası ve Discord sunucusu, kendi kurallarıyla bu hizmetler tarafından işletilir. Orada yalnızca sizin paylaştıklarınızı görürüz."
+      ],
+      [
+        "Hesabı silmek",
+        "Bize hesabın e-posta adresinden yazın: hesap, desteler dahil, on beş gün içinde silinir. Hakkınızda tuttuklarımızın bir kopyasını da isteyebilirsiniz."
+      ]
+    ],
+    "contact_h": "Bize yazın",
+    "contact_p": "Her türlü soru, silme talebi veya sorun için: <a href=\"mailto:contact@masterofthenight.com\">contact@masterofthenight.com</a>. Oyun hakkında konuşmak için <a href=\"https://discord.gg/pVcYAQx2f\">Discord</a>."
+  },
+  "nav_privacy": "Gizlilik ve iletişim"
 }

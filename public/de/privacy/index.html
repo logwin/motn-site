@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datenschutz und Kontakt — Master of the Night</title>
+<meta name="description" content="Master of the Night ist ein kostenloses Fanspiel ohne Werbung und ohne In-App-Käufe. Es erhebt nur, was es zum Funktionieren braucht. Diese Seite sagt was, warum, wo und wie man es löschen lässt.">
+<link rel="canonical" href="https://masterofthenight.com/de/privacy/">
+<link rel="alternate" hreflang="fr" href="https://masterofthenight.com/fr/privacy/">
+<link rel="alternate" hreflang="en" href="https://masterofthenight.com/en/privacy/">
+<link rel="alternate" hreflang="de" href="https://masterofthenight.com/de/privacy/">
+<link rel="alternate" hreflang="es" href="https://masterofthenight.com/es/privacy/">
+<link rel="alternate" hreflang="it" href="https://masterofthenight.com/it/privacy/">
+<link rel="alternate" hreflang="tr" href="https://masterofthenight.com/tr/privacy/">
+<link rel="alternate" hreflang="x-default" href="https://masterofthenight.com/en/privacy/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Master of the Night">
+<meta property="og:title" content="Master of the Night">
+<meta property="og:description" content="Master of the Night ist ein kostenloses Fanspiel ohne Werbung und ohne In-App-Käufe. Es erhebt nur, was es zum Funktionieren braucht. Diese Seite sagt was, warum, wo und wie man es löschen lässt.">
+<meta property="og:url" content="https://masterofthenight.com/de/">
+<meta property="og:image" content="https://masterofthenight.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#08080a">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/fonts/cormorant.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/sourcesans3.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face{font-family:"Cormorant Garamond";src:url(/fonts/cormorant.woff2) format("woff2");font-weight:300 700;font-style:normal;font-display:swap}
+  @font-face{font-family:"Cormorant Garamond";src:url(/fonts/cormorant-italic.woff2) format("woff2");font-weight:300 700;font-style:italic;font-display:swap}
+  @font-face{font-family:"Source Sans 3";src:url(/fonts/sourcesans3.woff2) format("woff2");font-weight:200 900;font-style:normal;font-display:swap}
+
+  :root{
+    --ink:#08080a; --ink2:#0e0a0c; --wine:#160b0e; --panel:#120d0f; --line:#2a1d20;
+    --gold:#b8975a; --goldlit:#e7c56b; --bone:#ddd6c6; --ash:#8f877a;
+    --blood:#5c2121; --bloodlit:#8d3232; --cool:#5a7f9c;
+    --display:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+    --text:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;
+    --wrap:1200px;
+  }
+  *{box-sizing:border-box}
+  html{background:var(--ink);scroll-behavior:smooth;scroll-padding-top:84px}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{margin:0;color:var(--bone);background:var(--ink);font:18px/1.6 var(--text);-webkit-font-smoothing:antialiased}
+  a{color:var(--goldlit)}
+  a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--goldlit);outline-offset:3px}
+  img,svg{display:block;max-width:100%}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+  p{margin:0 0 1rem;max-width:62ch}
+  h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.08;margin:0;color:var(--bone)}
+  h2{font-size:clamp(2.1rem,3.6vw,3rem);color:var(--goldlit);margin-bottom:1.2rem}
+  h3{font-size:1.55rem;margin-bottom:.4rem}
+  .lede{font-size:1.2rem;color:var(--bone)}
+  .muted{color:var(--ash)}
+
+  /* Navigation */
+  .nav{position:fixed;inset:0 0 auto;z-index:10;background:rgba(8,8,10,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex;align-items:center;gap:28px;height:64px}
+  .brand{font-family:var(--display);font-size:1.35rem;color:var(--bone);text-decoration:none;letter-spacing:.01em;white-space:nowrap}
+  .brand em{font-style:italic;color:var(--goldlit)}
+  .nav ul{display:flex;gap:26px;list-style:none;margin:0 0 0 auto;padding:0}
+  .nav li a{color:var(--bone);text-decoration:none;font-size:1rem}
+  .nav li a:hover{color:var(--goldlit)}
+  .nav .btn{padding:9px 18px;font-size:.98rem;white-space:nowrap}
+  .lang{position:relative;margin-left:auto}
+  .lang summary{list-style:none;cursor:pointer;color:var(--bone);font-size:.95rem;padding:6px 8px;border:1px solid var(--line);border-radius:3px;text-transform:uppercase;letter-spacing:.04em}
+  .lang summary::-webkit-details-marker{display:none}
+  .lang summary:hover{border-color:var(--gold);color:var(--goldlit)}
+  .lang ul{position:absolute;right:0;top:calc(100% + 6px);display:grid;gap:0;margin:0;padding:6px 0;list-style:none;background:#0e0a0c;border:1px solid var(--line);border-radius:3px;min-width:160px}
+  .lang li a{display:block;padding:7px 14px;color:var(--bone);text-decoration:none;font-size:.95rem}
+  .lang li a:hover,.lang li a[aria-current]{color:var(--goldlit);background:#1a1113}
+  .nav ul.menu{margin-left:auto}
+  .nav .lang{margin-left:0}
+  .burger{display:none}
+  .burger summary{display:grid;gap:4px;padding:9px 8px;width:34px;height:34px;box-sizing:border-box;align-content:center}
+  .burger summary span{display:block;height:1.5px;background:var(--bone)}
+  .burger summary:hover span{background:var(--goldlit)}
+  @media (max-width:760px){.nav .wrap{gap:10px}.nav ul.menu{display:none}.burger{display:block}.nav .lang{margin-left:auto}.nav .burger{margin-left:0}.nav .btn{padding:8px 12px;font-size:.9rem}}
+  .nav .btn .short{display:none}
+  @media (max-width:560px){.nav .btn .long{display:none}.nav .btn .short{display:inline}}
+  @media (max-width:380px){.brand{font-size:1.15rem}}
+
+  /* Boutons */
+  .btn{display:inline-block;padding:14px 28px;border-radius:3px;text-decoration:none;font-weight:600;font-size:1.05rem;border:1px solid var(--gold);transition:background .15s,color .15s,border-color .15s}
+  .btn.primary{background:#33161a;color:var(--goldlit)}
+  .btn.primary:hover{background:var(--bloodlit);color:#fff;border-color:var(--bloodlit)}
+  .btn.ghost{color:var(--bone);border-color:var(--line)}
+  .btn.ghost:hover{border-color:var(--gold);color:var(--goldlit)}
+  .actions{display:flex;gap:14px;flex-wrap:wrap}
+  @media (max-width:520px){.actions .btn{width:100%;text-align:center}}
+
+  /* Hero */
+  .hero{position:relative;padding:150px 0 70px;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:-30% -10% auto;height:95%;pointer-events:none;
+    background:radial-gradient(ellipse at 30% 25%, rgba(141,50,50,.34), rgba(92,33,33,.1) 42%, transparent 70%)}
+  .hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:48px;align-items:center}
+  .kicker{font-family:var(--display);font-style:italic;font-size:1.3rem;color:var(--gold);margin:0 0 .8rem}
+  .hero h1{font-weight:400;font-size:clamp(3.2rem,7.2vw,6rem);letter-spacing:-.012em;line-height:.95}
+  .hero h1 em{font-style:italic;font-weight:500;color:var(--goldlit)}
+  .hook{font-family:var(--display);font-style:italic;font-size:clamp(1.5rem,2.6vw,2.1rem);line-height:1.2;color:var(--goldlit);margin:1.4rem 0 0;max-width:22em}
+  .hero .lede{margin:1rem 0 2rem;max-width:30em}
+  .hint{font-size:.92rem;color:var(--ash);margin:1.1rem 0 0}
+  .proofs{display:flex;flex-wrap:wrap;gap:.4rem 0;list-style:none;padding:0;margin:2.4rem 0 0;font-size:1rem;color:var(--bone)}
+  .proofs li{padding-right:1rem;margin-right:1rem;border-right:1px solid var(--gold)}
+  .proofs li:last-child{border:0;margin:0;padding:0}
+  @media (max-width:900px){.hero{padding-top:120px}.hero .wrap{grid-template-columns:1fr;gap:40px}}
+  @media (max-width:520px){.proofs{display:grid;grid-template-columns:1fr 1fr;gap:.5rem 1rem}.proofs li{border:0;padding:0 0 0 1rem;margin:0;position:relative}.proofs li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--gold)}}
+
+  /* Table proie / prédateur */
+  .table{position:relative;aspect-ratio:1;max-width:520px;margin:0 auto;width:100%}
+  .table svg{position:absolute;inset:0;width:100%;height:100%}
+  .table .ring{fill:none;stroke:var(--line);stroke-width:1.5}
+  .table .felt{fill:#120b0d;stroke:var(--gold);stroke-width:1;opacity:.95}
+  .table .arc{fill:none;stroke-width:3;stroke-linecap:round;opacity:0;transition:opacity .25s}
+  .table .arc.prey{stroke:var(--bloodlit)}
+  .table .arc.pred{stroke:var(--cool)}
+  .table.active .arc{opacity:1}
+  .table .seat{position:absolute;width:21%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;
+    border:1px solid var(--line);background:#0d090a;color:var(--bone);font:600 .95rem/1.2 var(--text);cursor:pointer;
+    display:grid;place-items:center;text-align:center;padding:4px;transition:border-color .2s,background .2s,color .2s}
+  .table .seat small{display:block;font-weight:400;font-size:.78rem;color:var(--ash);margin-top:2px}
+  .table .seat:hover{border-color:var(--gold)}
+  .table .seat.me{border-color:var(--goldlit);background:#2a1a10;color:var(--goldlit);box-shadow:0 0 0 4px rgba(231,197,107,.12)}
+  .table .seat.prey{border-color:var(--bloodlit);background:#2a1114;color:#f1c9c9}
+  .table .seat.pred{border-color:var(--cool);background:#101a22;color:#cfe0ea}
+  .table .seat.ally{border-color:var(--gold);border-style:dashed;color:var(--bone)}
+  .table .center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:48%;text-align:center;font-family:var(--display);font-size:1.15rem;line-height:1.25;color:var(--bone)}
+  .table .center b{display:block;color:var(--goldlit);font-weight:500;font-size:1.3rem}
+  .table .center .prey{color:#f1c9c9}
+  .table .center .pred{color:#cfe0ea}
+  .table .center small{display:block;margin-top:.5rem;font-family:var(--text);font-size:.78rem;line-height:1.3;color:var(--ash)}
+  .table .center small b{display:inline;font:inherit;color:var(--gold)}
+  .table-caption{text-align:center;font-size:.95rem;color:var(--ash);margin:1rem auto 0;max-width:36em}
+  @media (prefers-reduced-motion:reduce){.table .arc,.table .seat,.btn{transition:none}}
+
+  /* Sections */
+  section{padding:88px 0;border-top:1px solid var(--line)}
+  section.wine{background:var(--wine)}
+  .two{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:start}
+  .two.flip{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+  .two.flip > :first-child{order:2}
+  @media (max-width:900px){.two,.two.flip{grid-template-columns:1fr;gap:28px}.two.flip > :first-child{order:0}}
+  .sticky{position:sticky;top:96px}
+  @media (max-width:900px){.sticky{position:static}}
+
+  .ways{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:36px 40px;margin-top:2rem}
+  .ways h3{padding-top:.8rem;border-top:1px solid var(--gold)}
+  .ways p{font-size:1.02rem;margin:0}
+
+  .rules{list-style:none;padding:0;margin:1.4rem 0 0;display:grid;gap:1rem}
+  .rules li{display:grid;grid-template-columns:2.4rem 1fr;gap:.9rem;align-items:baseline}
+  .rules .n{font-family:var(--display);font-size:2rem;line-height:1;color:var(--gold)}
+  .rules b{color:var(--bone);font-weight:600}
+
+  table.cmp{width:100%;border-collapse:collapse;margin-top:1.6rem;font-size:1.02rem}
+  .cmp th,.cmp td{text-align:left;padding:.9rem 1rem;border-bottom:1px solid var(--line);vertical-align:top}
+  .cmp th{font-family:var(--display);font-weight:500;font-size:1.3rem;color:var(--goldlit)}
+  .cmp td:first-child{color:var(--ash);width:22%}
+  .cmp a.btn{padding:9px 16px;font-size:.95rem}
+  @media (max-width:640px){
+    .cmp thead{display:none}
+    .cmp tr{display:block;padding:.6rem 0;border-bottom:1px solid var(--line)}
+    .cmp td{display:block;border:0;padding:.25rem 0}
+    .cmp td:first-child{width:auto;color:var(--bone);font-weight:600;padding-top:.6rem}
+    .cmp td[data-l]::before{content:attr(data-l);display:block;font-family:var(--display);color:var(--goldlit);font-size:1.15rem}
+  }
+
+  .faq{max-width:760px}
+  .faq details{border-top:1px solid var(--line);padding:.2rem 0}
+  .faq details:last-child{border-bottom:1px solid var(--line)}
+  .faq summary{cursor:pointer;list-style:none;padding:1rem 2.2rem 1rem 0;position:relative;font-family:var(--display);font-size:1.45rem;color:var(--bone)}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";position:absolute;right:.2rem;top:.85rem;font-size:1.6rem;color:var(--gold);line-height:1}
+  .faq details[open] summary::after{content:"–"}
+  .faq details p{padding-bottom:1rem;margin:0}
+
+  .cta{text-align:center;padding:110px 0}
+  .cta h2{font-size:clamp(2.4rem,5vw,4rem);font-weight:400;color:var(--bone)}
+  .cta h2 em{font-style:italic;color:var(--goldlit)}
+  .cta .actions{justify-content:center;margin-top:2rem}
+
+  footer{border-top:1px solid var(--line);padding:2.6rem 0 3rem;font-size:.9rem;color:var(--ash)}
+  footer .dp{display:flex;gap:22px;align-items:flex-start;flex-wrap:wrap}
+  footer img{width:96px;height:96px;object-fit:contain;flex:0 0 auto}
+  footer .dp > div{flex:1 1 320px}
+  footer p{max-width:72ch;margin:0 0 .6rem}
+  footer nav{margin-top:1.4rem;display:flex;gap:20px;flex-wrap:wrap}
+  footer nav a{color:var(--ash);text-decoration:none}
+  footer nav a:hover{color:var(--goldlit)}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="/de/">Master <em>of the</em> Night</a>
+  <ul class="menu"><li><a href="/de/#jeu">Das Spiel</a></li><li><a href="/de/#apprendre">Lernen</a></li><li><a href="/de/#plateformes">Plattformen</a></li><li><a href="/de/#faq">Fragen</a></li></ul>
+  <details class="lang"><summary aria-label="Sprache">de</summary><ul><li><a href="/fr/privacy/?lang=1" lang="fr" hreflang="fr">Français</a></li><li><a href="/en/privacy/?lang=1" lang="en" hreflang="en">English</a></li><li><a href="/de/privacy/?lang=1" lang="de" hreflang="de" aria-current="page">Deutsch</a></li><li><a href="/es/privacy/?lang=1" lang="es" hreflang="es">Español</a></li><li><a href="/it/privacy/?lang=1" lang="it" hreflang="it">Italiano</a></li><li><a href="/tr/privacy/?lang=1" lang="tr" hreflang="tr">Türkçe</a></li></ul></details>
+  <a class="btn primary" href="https://game.masterofthenight.com/"><span class="long">Kostenlos spielen</span><span class="short">Spielen</span></a>
+</div></header>
+<main class="wrap" style="padding-top:120px;max-width:800px">
+  <p class="kicker">Stand: 9. November 2026</p>
+  <h1 style="font-size:clamp(2.4rem,5vw,3.6rem);font-weight:400;margin-bottom:1rem">Datenschutz und Kontakt</h1>
+  <p class="lede">Master of the Night ist ein kostenloses Fanspiel ohne Werbung und ohne In-App-Käufe. Es erhebt nur, was es zum Funktionieren braucht. Diese Seite sagt was, warum, wo und wie man es löschen lässt.</p>
+  <style>main h2{font-size:1.6rem;margin:2.2rem 0 .6rem}</style>
+  <h2>Spielen ohne Konto</h2><p>Du kannst das Spiel öffnen, das Tutorial durchlaufen und Partien spielen, ohne etwas anzugeben. Website und Spiel setzen keine Tracking-Cookies: Das einzige Cookie der Website merkt sich deine Sprache („lang“, ein Jahr).</p><h2>Das optionale Konto</h2><p>Legst du ein Konto an, speichern wir eine E-Mail-Adresse, einen Spitznamen und ein Passwort. Das Passwort wird nie im Klartext gespeichert: Der Authentifizierungsdienst hasht es. Das Konto bewahrt deine Decks von Start zu Start und trägt kommende Funktionen, etwa Statistiken zu deinen Partien.</p><h2>Wo die Daten liegen</h2><p>Konten und Decks liegen bei Supabase, einem Datenbank-Hoster, auf der Infrastruktur, die er für uns betreibt. Website und Spiel werden von Cloudflare ausgeliefert, das technische Protokolle (IP-Adresse, aufgerufene Seiten) für Sicherheit und Lastmessung führt. Wir verkaufen, vermieten oder teilen keine Daten.</p><h2>Meldungen aus dem Spiel</h2><p>Meldest du aus dem Spiel ein Problem, werden dein eingegebener Text und der Zustand der betroffenen Partie übermittelt, damit wir den Fehler nachstellen können. Sie dienen nur dazu.</p><h2>Dienste Dritter</h2><p>Die itch.io-Seite und der Discord-Server werden von diesen Diensten nach eigenen Regeln betrieben. Wir sehen dort nur, was du veröffentlichst.</p><h2>Konto löschen</h2><p>Schreib uns von der E-Mail-Adresse des Kontos: Es wird samt Decks innerhalb von fünfzehn Tagen gelöscht. Du kannst auch eine Kopie dessen verlangen, was wir über dich gespeichert haben.</p>
+  <h2>Schreib uns</h2><p>Für Fragen, Löschanträge oder Probleme: <a href="mailto:contact@masterofthenight.com">contact@masterofthenight.com</a>. Zum Reden über das Spiel: der <a href="https://discord.gg/pVcYAQx2f">Discord</a>.</p>
+</main>
+<footer><div class="wrap"><nav>
+  <a href="/de/">Master of the Night</a>
+  <a href="https://game.masterofthenight.com/">Spielen</a>
+  <a href="https://logwin.itch.io/vtesmobilewindows">itch.io</a>
+  <a href="https://discord.gg/pVcYAQx2f" rel="noopener">Discord</a>
+</nav></div></footer>
+<script>
+document.querySelectorAll('.nav details').forEach(function(d){ document.addEventListener('click', function(e){ if (!d.contains(e.target)) d.removeAttribute('open'); }); });
+</script>
+</body></html>
