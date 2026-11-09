@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://masterofthenight.com/sitemap.xml
