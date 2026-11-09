@@ -1,20 +1,27 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Master of the Night — Vampire: The Eternal Struggle dans votre navigateur</title>
-<meta name="description" content="Jouez à Vampire: The Eternal Struggle gratuitement, dans votre navigateur, sans compte : table en ligne de 1 à 5 joueurs, tutoriel guidé, adversaires automatiques, deck builder. Anciennement VTES Mobile.">
-<link rel="canonical" href="https://masterofthenight.com/">
+<title>Master of the Night — Vampire: The Eternal Struggle en tu navegador</title>
+<meta name="description" content="Juega a Vampire: The Eternal Struggle gratis, en tu navegador y sin cuenta: mesas en línea de 1 a 5 jugadores, tutorial guiado, rivales automáticos y constructor de mazos. Antes VTES Mobile.">
+<link rel="canonical" href="https://masterofthenight.com/es/">
+<link rel="alternate" hreflang="fr" href="https://masterofthenight.com/fr/">
+<link rel="alternate" hreflang="en" href="https://masterofthenight.com/en/">
+<link rel="alternate" hreflang="de" href="https://masterofthenight.com/de/">
+<link rel="alternate" hreflang="es" href="https://masterofthenight.com/es/">
+<link rel="alternate" hreflang="it" href="https://masterofthenight.com/it/">
+<link rel="alternate" hreflang="tr" href="https://masterofthenight.com/tr/">
+<link rel="alternate" hreflang="x-default" href="https://masterofthenight.com/en/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Master of the Night">
 <meta property="og:title" content="Master of the Night">
-<meta property="og:description" content="Vampire: The Eternal Struggle, dans votre navigateur. Gratuit, sans compte, sans installation.">
-<meta property="og:url" content="https://masterofthenight.com/">
+<meta property="og:description" content="Vampire: The Eternal Struggle, en tu navegador. Gratis, sin cuenta, sin instalar nada.">
+<meta property="og:url" content="https://masterofthenight.com/es/">
 <meta property="og:image" content="https://masterofthenight.com/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:locale" content="fr_FR">
+<meta property="og:locale" content="es_ES">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#08080a">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -59,7 +66,16 @@
   .nav li a{color:var(--bone);text-decoration:none;font-size:1rem}
   .nav li a:hover{color:var(--goldlit)}
   .nav .btn{padding:9px 18px;font-size:.98rem;white-space:nowrap}
-  @media (max-width:760px){.nav ul{display:none}.nav .btn{margin-left:auto;padding:8px 14px;font-size:.92rem}}
+  .lang{position:relative;margin-left:auto}
+  .lang summary{list-style:none;cursor:pointer;color:var(--bone);font-size:.95rem;padding:6px 8px;border:1px solid var(--line);border-radius:3px;text-transform:uppercase;letter-spacing:.04em}
+  .lang summary::-webkit-details-marker{display:none}
+  .lang summary:hover{border-color:var(--gold);color:var(--goldlit)}
+  .lang ul{position:absolute;right:0;top:calc(100% + 6px);display:grid;gap:0;margin:0;padding:6px 0;list-style:none;background:#0e0a0c;border:1px solid var(--line);border-radius:3px;min-width:160px}
+  .lang li a{display:block;padding:7px 14px;color:var(--bone);text-decoration:none;font-size:.95rem}
+  .lang li a:hover,.lang li a[aria-current]{color:var(--goldlit);background:#1a1113}
+  .nav ul.menu{margin-left:auto}
+  .nav .lang{margin-left:0}
+  @media (max-width:760px){.nav ul.menu{display:none}.nav .lang{margin-left:auto}.nav .btn{padding:8px 14px;font-size:.92rem}}
 
   /* Boutons */
   .btn{display:inline-block;padding:14px 28px;border-radius:3px;text-decoration:none;font-weight:600;font-size:1.05rem;border:1px solid var(--gold);transition:background .15s,color .15s,border-color .15s}
@@ -171,13 +187,17 @@
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="#top">Master <em>of the</em> Night</a>
-    <ul>
-      <li><a href="#jeu">Le jeu</a></li>
-      <li><a href="#apprendre">Apprendre</a></li>
-      <li><a href="#plateformes">Plateformes</a></li>
-      <li><a href="#faq">Questions</a></li>
+    <ul class="menu">
+      <li><a href="#jeu">El juego</a></li>
+      <li><a href="#apprendre">Aprender</a></li>
+      <li><a href="#plateformes">Plataformas</a></li>
+      <li><a href="#faq">Preguntas</a></li>
     </ul>
-    <a class="btn primary" href="https://game.masterofthenight.com/">Jouer gratuitement</a>
+    <details class="lang">
+      <summary aria-label="Idioma">es</summary>
+      <ul><li><a href="/fr/?lang=1" lang="fr" hreflang="fr">Français</a></li><li><a href="/en/?lang=1" lang="en" hreflang="en">English</a></li><li><a href="/de/?lang=1" lang="de" hreflang="de">Deutsch</a></li><li><a href="/es/?lang=1" lang="es" hreflang="es" aria-current="page">Español</a></li><li><a href="/it/?lang=1" lang="it" hreflang="it">Italiano</a></li><li><a href="/tr/?lang=1" lang="tr" hreflang="tr">Türkçe</a></li></ul>
+    </details>
+    <a class="btn primary" href="https://game.masterofthenight.com/">Jugar gratis</a>
   </div>
 </header>
 
@@ -186,29 +206,29 @@
 <div class="hero">
   <div class="wrap">
     <div>
-      <p class="kicker">Vampire: The Eternal Struggle, dans votre navigateur</p>
+      <p class="kicker">Vampire: The Eternal Struggle, en tu navegador</p>
       <h1>Master <em>of the</em> Night</h1>
-      <p class="lede">Chassez votre proie. Survivez à votre prédateur. Le jeu de cartes de Richard Garfield sur une vraie table à cinq, avec les règles appliquées pour vous — gratuit, sans compte, sans rien à installer.</p>
+      <p class="lede">Caza a tu presa. Sobrevive a tu depredador. El juego de cartas de Richard Garfield en una mesa real de cinco, con las reglas aplicadas por ti — gratis, sin cuenta, sin instalar nada.</p>
       <div class="actions">
-        <a class="btn primary" href="https://game.masterofthenight.com/">Jouer gratuitement</a>
-        <a class="btn ghost" href="#plateformes">Version Windows</a>
+        <a class="btn primary" href="https://game.masterofthenight.com/">Jugar gratis</a>
+        <a class="btn ghost" href="#plateformes">Versión Windows</a>
       </div>
-      <p class="hint">Le premier lancement prend un moment, le temps de charger les cartes ; ensuite le jeu reste en cache. Un écran de PC ou de tablette est conseillé.</p>
+      <p class="hint">El primer arranque tarda un momento mientras se cargan las cartas; después el juego queda en caché. Se recomienda una pantalla de PC o tableta.</p>
       <ul class="proofs">
-        <li>100 % gratuit</li><li>Sans compte</li><li>En ligne, de 1 à 5</li><li>Tutoriel guidé</li>
+        <li>100 % gratis</li><li>Sin cuenta</li><li>En línea, de 1 a 5</li><li>Tutorial guiado</li>
       </ul>
     </div>
     <div>
-      <div class="table" id="table" aria-label="Schéma d'une table à cinq joueurs : proie et prédateur">
+      <div class="table" id="table" aria-label="Esquema de una mesa de cinco jugadores: presa y depredador" data-i18n='{&quot;you&quot;: &quot;Tú&quot;, &quot;prey&quot;: &quot;su presa&quot;, &quot;pred&quot;: &quot;su depredador&quot;, &quot;seat&quot;: &quot;Asiento de&quot;, &quot;you_prey&quot;: &quot;ti&quot;, &quot;you_pred&quot;: &quot;ti&quot;, &quot;you_sentence&quot;: &quot;{who}cazas a {prey}&lt;br&gt;y eres presa de {pred}&quot;, &quot;other_sentence&quot;: &quot;{who}caza a {prey}&lt;br&gt;y es presa de {pred}&quot;}'>
         <svg viewBox="0 0 100 100" aria-hidden="true">
           <circle class="ring" cx="50" cy="50" r="40"/>
           <circle class="felt" cx="50" cy="50" r="27"/>
           <path class="arc prey" id="arcPrey" d=""/>
           <path class="arc pred" id="arcPred" d=""/>
         </svg>
-        <div class="center" id="tableText"><b>Touchez un siège</b>pour voir qui chasse qui</div>
+        <div class="center" id="tableText"><b>Toca un asiento</b>para ver quién caza a quién</div>
       </div>
-      <p class="table-caption">À cinq, chacun attaque le joueur à sa gauche — sa proie — et se défend contre celui de droite — son prédateur. Quand votre proie tombe, sa proie devient la vôtre.</p>
+      <p class="table-caption">A cinco, cada uno ataca al jugador de su izquierda — su presa — y se defiende del de su derecha — su depredador. Cuando cae tu presa, su presa pasa a ser la tuya.</p>
     </div>
   </div>
 </div>
@@ -216,60 +236,48 @@
 <section id="jeu">
   <div class="wrap two">
     <div class="sticky">
-      <h2>Qu'est-ce que Vampire: The Eternal Struggle ?</h2>
-      <p class="muted">Né en 1994 sous le nom de <em>Jyhad</em>, l'autre jeu de cartes de Richard Garfield, l'auteur de Magic.</p>
+      <h2>¿Qué es Vampire: The Eternal Struggle?</h2>
+      <p class="muted">Nacido en 1994 con el nombre de <em>Jyhad</em>, el otro juego de cartas de Richard Garfield, el creador de Magic.</p>
     </div>
     <div>
-      <p class="lede">Vous êtes un Mathusalem, un vampire si ancien qu'il n'agit plus que par procuration. Vos pions sont des vampires plus jeunes que vous réveillez un à un, et votre réserve de sang est votre vie : quand elle tombe à zéro, vous sortez de la partie.</p>
-      <p>Ce qui rend VTES unique, c'est la table. On ne joue pas en duel mais à plusieurs, et pas tous contre tous : vous ne pouvez attaquer que votre proie, à votre gauche, pendant que votre prédateur, à votre droite, s'occupe de vous. Un tour de table, ce sont des actions, des blocages, des combats et des référendums où les alliances se nouent et se défont à voix haute.</p>
+      <p class="lede">Eres un Matusalén, un vampiro tan antiguo que solo actúa a través de otros. Tus peones son vampiros más jóvenes que despiertas uno a uno, y tu reserva de sangre es tu vida: cuando llega a cero, quedas fuera de la partida.</p>
+      <p>Lo que hace único a VTES es la mesa. No se juega en duelo sino entre varios, y tampoco todos contra todos: solo puedes atacar a tu presa, a tu izquierda, mientras tu depredador, a tu derecha, se ocupa de ti. Una ronda de mesa son acciones, bloqueos, combates y referéndums donde las alianzas se hacen y se deshacen en voz alta.</p>
       <ul class="rules">
-        <li><span class="n">I</span><span><b>Réveillez vos vampires.</b> Chaque tour, vous transférez du sang de votre réserve vers votre crypte pour amener de nouveaux vampires à la table.</span></li>
-        <li><span class="n">II</span><span><b>Saignez votre proie.</b> Vos vampires agissent : un <em>bleed</em> fait perdre du sang à votre proie, à moins qu'un de ses vampires ne bloque et ne déclenche un combat.</span></li>
-        <li><span class="n">III</span><span><b>Faites voter la table.</b> Les vampires titrés appellent des référendums que toute la table tranche. C'est là que se jouent les coups les plus retors.</span></li>
+        <li><span class="n">I</span><span><b>Despierta a tus vampiros.</b> Cada turno transfieres sangre de tu reserva a tu cripta para traer nuevos vampiros a la mesa.</span></li>
+        <li><span class="n">II</span><span><b>Desangra a tu presa.</b> Tus vampiros actúan: un <em>bleed</em> hace perder sangre a tu presa, salvo que uno de sus vampiros bloquee y desencadene un combate.</span></li>
+        <li><span class="n">III</span><span><b>Haz votar a la mesa.</b> Los vampiros con título convocan referéndums que decide toda la mesa. Ahí se juegan las jugadas más retorcidas.</span></li>
       </ul>
-      <p style="margin-top:1.4rem">Dans Master of the Night, c'est le moteur qui applique les règles, cartes comprises. Quand une carte vous laisse un choix, le jeu vous le présente ; quand elle n'en laisse pas, il tranche et vous l'écrit dans le journal de partie. Vous vous concentrez sur ce que vous voulez faire ; la table sait ce qui est permis.</p>
+      <p style="margin-top:1.4rem">En Master of the Night es el motor el que aplica las reglas, cartas incluidas. Cuando una carta te deja elegir, el juego te lo presenta; cuando no, decide y lo escribe en el registro de la partida. Tú te concentras en lo que quieres hacer; la mesa sabe lo que está permitido.</p>
     </div>
   </div>
 </section>
 
 <section id="apprendre" class="wine">
   <div class="wrap">
-    <h2>Apprendre, s'entraîner, jouer, construire</h2>
-    <p class="lede">Personne ne connaît VTES en naissant. Le jeu est conçu pour qu'on puisse l'apprendre seul, un soir, et avoir une vraie table le lendemain.</p>
+    <h2>Aprender, entrenar, jugar, construir</h2>
+    <p class="lede">Nadie nace sabiendo VTES. El juego está pensado para aprenderlo solo, en una tarde, y sentarse a una mesa real al día siguiente.</p>
     <div class="ways">
-      <div>
-        <h3>Apprendre</h3>
-        <p>Des dizaines de leçons courtes, jouées sur la vraie table et non sur un plateau simulé : votre côté de la table, les phases, le premier bleed, le premier blocage, un combat complet, la torpeur, les alliés, les votes, les voies, les sectes. Racontées à voix haute en français et en anglais, écrites en six langues.</p>
-      </div>
-      <div>
-        <h3>S'entraîner</h3>
-        <p>Des adversaires automatiques qui jouent leur deck, bloquent quand ça compte et savent sortir de torpeur. Vingt et un decks préconstruits officiels, Fifth Edition et New Blood, sont fournis pour eux comme pour vous.</p>
-      </div>
-      <div>
-        <h3>Jouer entre amis</h3>
-        <p>Une table en ligne de un à cinq joueurs, chacun depuis son navigateur ou son PC. Vous êtes trois ? Ajoutez deux adversaires automatiques pour compléter la table, ou jouez à trois.</p>
-      </div>
-      <div>
-        <h3>Construire son deck</h3>
-        <p>Un deck builder pour composer crypte et bibliothèque en partant de zéro, ou pour importer un deck existant : un lien VTES Decks ou VDB, ou une liste collée dans les formats habituels.</p>
-      </div>
+      <div><h3>Aprender</h3><p>Decenas de lecciones cortas, jugadas en la mesa real y no en un tablero simulado: tu lado de la mesa, las fases, el primer bleed, el primer bloqueo, un combate completo, el letargo, los aliados, las votaciones, las sendas, las sectas. Narradas en voz alta en inglés y francés, escritas en seis idiomas.</p></div>
+      <div><h3>Entrenar</h3><p>Rivales automáticos que juegan su mazo, bloquean cuando importa y saben salir del letargo. Veintiún mazos preconstruidos oficiales, Fifth Edition y New Blood, vienen incluidos para ellos y para ti.</p></div>
+      <div><h3>Jugar con amigos</h3><p>Una mesa en línea de uno a cinco jugadores, cada uno desde su navegador o su PC. ¿Sois tres? Añade dos rivales automáticos para completar la mesa, o jugad a tres.</p></div>
+      <div><h3>Construir tu mazo</h3><p>Un constructor de mazos para componer cripta y biblioteca desde cero, o para importar un mazo existente: un enlace de VTES Decks o VDB, o una lista pegada en los formatos habituales.</p></div>
     </div>
   </div>
 </section>
 
 <section id="plateformes">
   <div class="wrap">
-    <h2>Navigateur ou Windows ?</h2>
-    <p class="lede">Le même jeu, la même table. La version web est faite pour essayer et jouer sans rien installer ; la version Windows pour ceux qui jouent souvent.</p>
+    <h2>¿Navegador o Windows?</h2>
+    <p class="lede">El mismo juego, la misma mesa. La versión web está hecha para probar y jugar sin instalar nada; la versión Windows, para quien juega a menudo.</p>
     <table class="cmp">
-      <thead><tr><th></th><th>Dans le navigateur</th><th>Sur Windows</th></tr></thead>
+      <thead><tr><th></th><th>En el navegador</th><th>En Windows</th></tr></thead>
       <tbody>
-        <tr><td>Installation</td><td data-l="Navigateur">Aucune. Ouvrez l'adresse et jouez.</td><td data-l="Windows">Téléchargez l'archive sur itch.io, décompressez-la, lancez le jeu.</td></tr>
-        <tr><td>Mises à jour</td><td data-l="Navigateur">Toujours la dernière version, sans rien faire.</td><td data-l="Windows">Le jeu vous prévient au menu quand une nouvelle version sort.</td></tr>
-        <tr><td>Appareils</td><td data-l="Navigateur">PC, Mac, tablette. Chrome, Edge, Firefox ou Safari récents.</td><td data-l="Windows">Windows 10 et 11.</td></tr>
-        <tr><td>Langues</td><td data-l="Navigateur">Interface en français, anglais, allemand, espagnol, italien et turc.</td><td data-l="Windows">Les mêmes.</td></tr>
-        <tr><td>Prix</td><td data-l="Navigateur">Gratuit, sans compte.</td><td data-l="Windows">Gratuit, sans compte.</td></tr>
-        <tr><td></td><td><a class="btn primary" href="https://game.masterofthenight.com/">Jouer maintenant</a></td><td><a class="btn ghost" href="https://logwin.itch.io/vtesmobilewindows">Télécharger sur itch.io</a></td></tr>
+        <tr><td>Instalación</td><td data-l="En el navegador">Ninguna. Abre la dirección y juega.</td><td data-l="En Windows">Descarga el archivo en itch.io, descomprímelo y lanza el juego.</td></tr>
+        <tr><td>Actualizaciones</td><td data-l="En el navegador">Siempre la última versión, sin hacer nada.</td><td data-l="En Windows">El juego te avisa en el menú cuando sale una versión nueva.</td></tr>
+        <tr><td>Dispositivos</td><td data-l="En el navegador">PC, Mac, tableta. Chrome, Edge, Firefox o Safari recientes.</td><td data-l="En Windows">Windows 10 y 11.</td></tr>
+        <tr><td>Idiomas</td><td data-l="En el navegador">Interfaz en español, inglés, francés, alemán, italiano y turco.</td><td data-l="En Windows">Los mismos.</td></tr>
+        <tr><td>Precio</td><td data-l="En el navegador">Gratis, sin cuenta.</td><td data-l="En Windows">Gratis, sin cuenta.</td></tr>
+        <tr><td></td><td><a class="btn primary" href="https://game.masterofthenight.com/">Jugar ahora</a></td><td><a class="btn ghost" href="https://logwin.itch.io/vtesmobilewindows">Descargar en itch.io</a></td></tr>
       </tbody>
     </table>
   </div>
@@ -277,28 +285,28 @@
 
 <section id="faq" class="wine">
   <div class="wrap">
-    <h2>Questions fréquentes</h2>
+    <h2>Preguntas frecuentes</h2>
     <div class="faq">
-      <details><summary>Faut-il déjà connaître VTES ?</summary><p>Non. Le tutoriel part de zéro : il vous montre votre côté de la table, puis vous fait jouer un vrai tour, un vrai combat, un vrai vote, en vous expliquant à chaque étape ce qui se passe et pourquoi. Comptez une soirée pour être à l'aise.</p></details>
-      <details><summary>Peut-on jouer seul ?</summary><p>Oui. Les adversaires automatiques remplissent la table à cinq et jouent leur propre deck, pris parmi les préconstruits officiels ou ceux que vous leur donnez. C'est aussi le meilleur moyen de tester un deck avant de le sortir contre des humains.</p></details>
-      <details><summary>Comment jouer avec mes amis ?</summary><p>Créez une table en ligne depuis le jeu et faites-la rejoindre par vos amis, de deux à cinq joueurs. Les sièges restants peuvent être confiés à des adversaires automatiques, ou laissés vides pour une table plus courte.</p></details>
-      <details><summary>Faut-il créer un compte ?</summary><p>Non. Aucune inscription, aucun mot de passe, aucune donnée personnelle demandée. Vous ouvrez la page et vous jouez.</p></details>
-      <details><summary>Pourquoi le premier chargement est-il long ?</summary><p>Le jeu embarque les textes et les images de toutes les cartes. Votre navigateur les garde en cache après le premier lancement, et les suivants sont bien plus rapides.</p></details>
-      <details><summary>Ça marche sur téléphone ?</summary><p>Le jeu se lance sur un téléphone récent, mais une table à cinq avec ses cartes demande de la place : un écran de PC ou de tablette est nettement plus confortable.</p></details>
-      <details><summary>Windows affiche « Windows a protégé votre ordinateur »</summary><p>C'est l'avertissement standard pour un programme qui n'a pas acheté de certificat de signature, ce que le jeu, gratuit, n'a pas fait. Cliquez sur <em>Informations complémentaires</em>, puis <em>Exécuter quand même</em>. L'archive est celle publiée sur itch.io, et uniquement là.</p></details>
-      <details><summary>Est-ce le même jeu que VTES Mobile ?</summary><p>Oui. VTES Mobile devient Master of the Night ; même table, même moteur, même équipe. La page itch.io garde son ancienne adresse pour que vos liens continuent de fonctionner.</p></details>
-      <details><summary>Est-ce un jeu officiel ?</summary><p>Non. Master of the Night est un projet de fans, gratuit et sans achat intégré, publié dans le cadre du programme Dark Pack de Paradox Interactive. Le jeu de cartes Vampire: The Eternal Struggle est édité par Black Chantry Productions, et c'est chez eux qu'on achète les vraies cartes.</p></details>
+      <details><summary>¿Hace falta conocer ya VTES?</summary><p>No. El tutorial parte de cero: te enseña tu lado de la mesa y luego te hace jugar un turno real, un combate real, una votación real, explicándote en cada paso qué pasa y por qué. Cuenta con una tarde para sentirte cómodo.</p></details>
+      <details><summary>¿Se puede jugar solo?</summary><p>Sí. Los rivales automáticos completan la mesa de cinco y juegan su propio mazo, tomado de los preconstruidos oficiales o de los que tú les des. Es también la mejor forma de probar un mazo antes de sacarlo contra humanos.</p></details>
+      <details><summary>¿Cómo juego con mis amigos?</summary><p>Crea una mesa en línea desde el juego y haz que tus amigos se unan, de dos a cinco jugadores. Los asientos restantes pueden darse a rivales automáticos o dejarse vacíos para una mesa más corta.</p></details>
+      <details><summary>¿Hace falta crear una cuenta?</summary><p>No. Sin registro, sin contraseña, sin datos personales. Abres la página y juegas.</p></details>
+      <details><summary>¿Por qué tarda tanto la primera carga?</summary><p>El juego lleva los textos y las imágenes de todas las cartas. Tu navegador los guarda en caché tras el primer arranque, y los siguientes son mucho más rápidos.</p></details>
+      <details><summary>¿Funciona en el móvil?</summary><p>El juego arranca en un móvil reciente, pero una mesa de cinco con sus cartas necesita espacio: una pantalla de PC o tableta es mucho más cómoda.</p></details>
+      <details><summary>Windows muestra «Windows protegió su PC»</summary><p>Es el aviso estándar para un programa que no ha comprado un certificado de firma, cosa que este juego gratuito no ha hecho. Pulsa <em>Más información</em> y luego <em>Ejecutar de todas formas</em>. El archivo es el publicado en itch.io, y solo ahí.</p></details>
+      <details><summary>¿Es el mismo juego que VTES Mobile?</summary><p>Sí. VTES Mobile pasa a llamarse Master of the Night; la misma mesa, el mismo motor, el mismo equipo. La página de itch.io conserva su antigua dirección para que tus enlaces sigan funcionando.</p></details>
+      <details><summary>¿Es un juego oficial?</summary><p>No. Master of the Night es un proyecto de aficionados, gratuito y sin compras integradas, publicado dentro del programa Dark Pack de Paradox Interactive. El juego de cartas Vampire: The Eternal Struggle lo edita Black Chantry Productions, y es ahí donde se compran las cartas reales.</p></details>
     </div>
   </div>
 </section>
 
 <section class="cta">
   <div class="wrap">
-    <h2>La nuit <em>vous attend.</em></h2>
-    <p class="lede" style="margin:1rem auto 0">Une table à cinq, cinq minutes pour la rejoindre.</p>
+    <h2>La noche <em>te espera.</em></h2>
+    <p class="lede" style="margin:1rem auto 0">Una mesa de cinco, cinco minutos para sentarte.</p>
     <div class="actions">
-      <a class="btn primary" href="https://game.masterofthenight.com/">Jouer gratuitement</a>
-      <a class="btn ghost" href="https://logwin.itch.io/vtesmobilewindows">Laisser un retour sur itch.io</a>
+      <a class="btn primary" href="https://game.masterofthenight.com/">Jugar gratis</a>
+      <a class="btn ghost" href="https://logwin.itch.io/vtesmobilewindows">Dejar un comentario en itch.io</a>
     </div>
   </div>
 </section>
@@ -308,14 +316,14 @@
 <footer>
   <div class="wrap">
     <div class="dp">
-      <img src="/darkpack.png" alt="Logo Dark Pack" width="96" height="96">
+      <img src="/darkpack.png" alt="Dark Pack" width="96" height="96">
       <div>
-        <p>Master of the Night est un jeu de fans, non officiel, publié dans le cadre du programme Dark Pack. Portions of the materials are the copyrights and trademarks of Paradox Interactive AB, and are used with permission. All rights reserved. For more information please visit <a href="https://www.worldofdarkness.com/">worldofdarkness.com</a>.</p>
-        <p>Vampire: The Eternal Struggle est publié par Black Chantry Productions. Ce site et ce jeu ne sont ni produits ni approuvés par Paradox Interactive ou Black Chantry Productions.</p>
+        <p>Master of the Night es un juego de aficionados, no oficial, publicado dentro del programa Dark Pack. Portions of the materials are the copyrights and trademarks of Paradox Interactive AB, and are used with permission. All rights reserved. For more information please visit <a href="https://www.worldofdarkness.com/">worldofdarkness.com</a>.</p>
+        <p>Vampire: The Eternal Struggle lo publica Black Chantry Productions. Ni este sitio ni este juego están producidos ni aprobados por Paradox Interactive o Black Chantry Productions.</p>
       </div>
     </div>
     <nav>
-      <a href="https://game.masterofthenight.com/">Jouer</a>
+      <a href="https://game.masterofthenight.com/">Jugar</a>
       <a href="https://logwin.itch.io/vtesmobilewindows">itch.io</a>
       <a href="https://www.blackchantry.com/">Black Chantry Productions</a>
       <a href="https://paradoxinteractive.com/games/world-of-darkness/community/dark-pack-agreement">Dark Pack</a>
@@ -329,7 +337,8 @@
   var text = document.getElementById('tableText');
   var arcPrey = document.getElementById('arcPrey');
   var arcPred = document.getElementById('arcPred');
-  var names = ['Vous','Aline','Nash','Ivan','Fanchon'];
+  var T = JSON.parse(table.getAttribute('data-i18n'));
+  var names = [T.you,'Aline','Nash','Ivan','Fanchon'];
   var N = 5, R = 40, cx = 50, cy = 50;
   function pos(i){ var a = (90 + i*360/N) * Math.PI/180; return [cx + R*Math.cos(a), cy + R*Math.sin(a)]; }
   function arc(i, j, sweep){ var p = pos(i), q = pos(j); return 'M'+p[0].toFixed(2)+' '+p[1].toFixed(2)+' A'+R+' '+R+' 0 0 '+sweep+' '+q[0].toFixed(2)+' '+q[1].toFixed(2); }
@@ -339,7 +348,7 @@
     b.type = 'button'; b.className = 'seat';
     var p = pos(i); b.style.left = p[0]+'%'; b.style.top = p[1]+'%';
     b.innerHTML = names[i] + '<small></small>';
-    b.setAttribute('aria-label', 'Siège de ' + names[i]);
+    b.setAttribute('aria-label', T.seat + ' ' + names[i]);
     b.dataset.i = i;
     table.appendChild(b); seats.push(b);
   }
@@ -349,14 +358,18 @@
       s.classList.remove('me','prey','pred');
       var tag = s.querySelector('small'); tag.textContent = '';
       if (k === i) s.classList.add('me');
-      else if (k === prey) { s.classList.add('prey'); tag.textContent = 'sa proie'; }
-      else if (k === pred) { s.classList.add('pred'); tag.textContent = 'son prédateur'; }
+      else if (k === prey) { s.classList.add('prey'); tag.textContent = T.prey; }
+      else if (k === pred) { s.classList.add('pred'); tag.textContent = T.pred; }
     });
     arcPrey.setAttribute('d', arc(i, prey, 1));
     arcPred.setAttribute('d', arc(pred, i, 1));
     table.classList.add('active');
-    var who = i === 0 ? 'Vous' : names[i];
-    text.innerHTML = '<b>' + who + '</b>' + (i===0 ? 'attaquez ' : 'attaque ') + '<span class="prey">' + names[prey] + '</span><br>et ' + (i===0 ? 'surveillez ' : 'surveille ') + '<span class="pred">' + names[pred] + '</span>';
+    var form = function(k, kind){ // nom décliné selon la langue ; « vous » a sa propre forme
+      if (k === 0) return T['you_' + kind] || T.you;
+      return (T['name_' + kind] || '{n}').replace('{n}', names[k]);
+    };
+    var tpl = i === 0 ? T.you_sentence : T.other_sentence;
+    text.innerHTML = tpl.replace('{who}', '<b>' + names[i] + '</b>').replace('{prey}', '<span class="prey">' + form(prey, 'prey') + '</span>').replace('{pred}', '<span class="pred">' + form(pred, 'pred') + '</span>');
   }
   seats.forEach(function(s){
     s.addEventListener('click', function(){ show(+s.dataset.i); });
