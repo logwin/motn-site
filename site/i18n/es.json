@@ -14,7 +14,6 @@
   "cta_play_now": "Jugar ahora",
   "cta_windows": "Versión Windows",
   "cta_itch": "Descargar en itch.io",
-  "cta_feedback": "Dejar un comentario en itch.io",
   "kicker": "Vampire: The Eternal Struggle, en tu navegador",
   "hero_lede": "Caza a tu presa. Sobrevive a tu depredador. El juego de cartas de Richard Garfield en una mesa real de cinco, con las reglas aplicadas por ti — gratis, sin cuenta, sin instalar nada.",
   "hero_hint": "El primer arranque tarda un momento mientras se cargan las cartas; después el juego queda en caché. Se recomienda una pantalla de PC o tableta.",
@@ -33,9 +32,13 @@
     "you_prey": "ti",
     "you_pred": "ti",
     "you_sentence": "{who}cazas a {prey}<br>y eres presa de {pred}",
-    "other_sentence": "{who}caza a {prey}<br>y es presa de {pred}"
+    "other_sentence": "{who}caza a {prey}<br>y es presa de {pred}",
+    "ally": "aliado",
+    "you_ally": "tú",
+    "ally_label": "Aliados al otro lado de la mesa:",
+    "ally_sep": " y "
   },
-  "table_caption": "A cinco, cada uno ataca al jugador de su izquierda — su presa — y se defiende del de su derecha — su depredador. Cuando cae tu presa, su presa pasa a ser la tuya.",
+  "table_caption": "A cinco, cada uno ataca al jugador de su izquierda — su presa — y se defiende del de su derecha — su depredador. Los otros dos, al otro lado de la mesa, son tus aliados naturales: nada les empuja a atacarte. Cuando cae tu presa, su presa pasa a ser la tuya.",
   "what_title": "¿Qué es Vampire: The Eternal Struggle?",
   "what_sub": "Nacido en 1994 con el nombre de <em>Jyhad</em>, el otro juego de cartas de Richard Garfield, el creador de Magic.",
   "what_p1": "Eres un Matusalén, un vampiro tan antiguo que solo actúa a través de otros. Tus peones son vampiros más jóvenes que despiertas uno a uno, y tu reserva de sangre es tu vida: cuando llega a cero, quedas fuera de la partida.",
@@ -95,5 +98,7 @@
   "cta_title": "La noche <em>te espera.</em>",
   "cta_sub": "Una mesa de cinco, cinco minutos para sentarte.",
   "footer_dp": "Master of the Night es un juego de aficionados, no oficial, publicado dentro del programa Dark Pack.",
-  "footer_bcp": "Vampire: The Eternal Struggle lo publica Black Chantry Productions. Ni este sitio ni este juego están producidos ni aprobados por Paradox Interactive o Black Chantry Productions."
+  "footer_bcp": "Vampire: The Eternal Struggle lo publica Black Chantry Productions. Ni este sitio ni este juego están producidos ni aprobados por Paradox Interactive o Black Chantry Productions.",
+  "cta_discord": "Unirse al Discord",
+  "cta_feedback_line": "¿Una carta que se comporta mal, una idea? Dilo en el Discord o en la página de itch.io: cada aviso se lee."
 }

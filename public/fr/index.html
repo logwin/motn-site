@@ -119,10 +119,13 @@
   .table .seat.me{border-color:var(--goldlit);background:#2a1a10;color:var(--goldlit);box-shadow:0 0 0 4px rgba(231,197,107,.12)}
   .table .seat.prey{border-color:var(--bloodlit);background:#2a1114;color:#f1c9c9}
   .table .seat.pred{border-color:var(--cool);background:#101a22;color:#cfe0ea}
+  .table .seat.ally{border-color:var(--gold);border-style:dashed;color:var(--bone)}
   .table .center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:48%;text-align:center;font-family:var(--display);font-size:1.15rem;line-height:1.25;color:var(--bone)}
   .table .center b{display:block;color:var(--goldlit);font-weight:500;font-size:1.3rem}
   .table .center .prey{color:#f1c9c9}
   .table .center .pred{color:#cfe0ea}
+  .table .center small{display:block;margin-top:.5rem;font-family:var(--text);font-size:.78rem;line-height:1.3;color:var(--ash)}
+  .table .center small b{display:inline;font:inherit;color:var(--gold)}
   .table-caption{text-align:center;font-size:.95rem;color:var(--ash);margin:1rem auto 0;max-width:36em}
   @media (prefers-reduced-motion:reduce){.table .arc,.table .seat,.btn{transition:none}}
 
@@ -219,7 +222,7 @@
       </ul>
     </div>
     <div>
-      <div class="table" id="table" aria-label="Schéma d'une table à cinq joueurs : proie et prédateur" data-i18n='{&quot;you&quot;: &quot;Vous&quot;, &quot;prey&quot;: &quot;sa proie&quot;, &quot;pred&quot;: &quot;son prédateur&quot;, &quot;seat&quot;: &quot;Siège de&quot;, &quot;you_prey&quot;: &quot;vous&quot;, &quot;you_pred&quot;: &quot;vous&quot;, &quot;you_sentence&quot;: &quot;{who}avez pour proie {prey}&lt;br&gt;et pour prédateur {pred}&quot;, &quot;other_sentence&quot;: &quot;{who}a pour proie {prey}&lt;br&gt;et pour prédateur {pred}&quot;}'>
+      <div class="table" id="table" aria-label="Schéma d'une table à cinq joueurs : proie et prédateur" data-i18n='{&quot;you&quot;: &quot;Vous&quot;, &quot;prey&quot;: &quot;sa proie&quot;, &quot;pred&quot;: &quot;son prédateur&quot;, &quot;seat&quot;: &quot;Siège de&quot;, &quot;you_prey&quot;: &quot;vous&quot;, &quot;you_pred&quot;: &quot;vous&quot;, &quot;you_sentence&quot;: &quot;{who}avez pour proie {prey}&lt;br&gt;et pour prédateur {pred}&quot;, &quot;other_sentence&quot;: &quot;{who}a pour proie {prey}&lt;br&gt;et pour prédateur {pred}&quot;, &quot;ally&quot;: &quot;allié&quot;, &quot;you_ally&quot;: &quot;vous&quot;, &quot;ally_label&quot;: &quot;Alliés de l&#x27;autre côté de la table :&quot;, &quot;ally_sep&quot;: &quot; et &quot;}'>
         <svg viewBox="0 0 100 100" aria-hidden="true">
           <circle class="ring" cx="50" cy="50" r="40"/>
           <circle class="felt" cx="50" cy="50" r="27"/>
@@ -228,7 +231,7 @@
         </svg>
         <div class="center" id="tableText"><b>Touchez un siège</b>pour voir qui chasse qui</div>
       </div>
-      <p class="table-caption">À cinq, chacun attaque le joueur à sa gauche — sa proie — et se défend contre celui de droite — son prédateur. Quand votre proie tombe, sa proie devient la vôtre.</p>
+      <p class="table-caption">À cinq, chacun attaque le joueur à sa gauche — sa proie — et se défend contre celui de droite — son prédateur. Les deux autres, de l'autre côté de la table, sont vos alliés naturels : rien ne les pousse à vous attaquer. Quand votre proie tombe, sa proie devient la vôtre.</p>
     </div>
   </div>
 </div>
@@ -306,8 +309,9 @@
     <p class="lede" style="margin:1rem auto 0">Une table à cinq, cinq minutes pour la rejoindre.</p>
     <div class="actions">
       <a class="btn primary" href="https://game.masterofthenight.com/">Jouer gratuitement</a>
-      <a class="btn ghost" href="https://logwin.itch.io/vtesmobilewindows">Laisser un retour sur itch.io</a>
+      <a class="btn ghost" href="https://discord.gg/pVcYAQx2f" rel="noopener">Rejoindre le Discord</a>
     </div>
+    <p class="muted" style="margin:1.4rem auto 0;font-size:.95rem">Une carte qui se comporte mal, une idée ? Dites-le sur le Discord ou sur la page itch.io : chaque retour est lu.</p>
   </div>
 </section>
 
@@ -325,6 +329,7 @@
     <nav>
       <a href="https://game.masterofthenight.com/">Jouer</a>
       <a href="https://logwin.itch.io/vtesmobilewindows">itch.io</a>
+      <a href="https://discord.gg/pVcYAQx2f" rel="noopener">Discord</a>
       <a href="https://www.blackchantry.com/">Black Chantry Productions</a>
       <a href="https://paradoxinteractive.com/games/world-of-darkness/community/dark-pack-agreement">Dark Pack</a>
     </nav>
@@ -360,7 +365,10 @@
       if (k === i) s.classList.add('me');
       else if (k === prey) { s.classList.add('prey'); tag.textContent = T.prey; }
       else if (k === pred) { s.classList.add('pred'); tag.textContent = T.pred; }
+      else { s.classList.add('ally'); tag.textContent = T.ally; }
     });
+    var allies = [];
+    for (var k = 0; k < N; k++) if (k !== i && k !== prey && k !== pred) allies.push(k === 0 ? T.you_ally : names[k]);
     arcPrey.setAttribute('d', arc(i, prey, 1));
     arcPred.setAttribute('d', arc(pred, i, 1));
     table.classList.add('active');
@@ -369,7 +377,8 @@
       return (T['name_' + kind] || '{n}').replace('{n}', names[k]);
     };
     var tpl = i === 0 ? T.you_sentence : T.other_sentence;
-    text.innerHTML = tpl.replace('{who}', '<b>' + names[i] + '</b>').replace('{prey}', '<span class="prey">' + form(prey, 'prey') + '</span>').replace('{pred}', '<span class="pred">' + form(pred, 'pred') + '</span>');
+    text.innerHTML = tpl.replace('{who}', '<b>' + names[i] + '</b>').replace('{prey}', '<span class="prey">' + form(prey, 'prey') + '</span>').replace('{pred}', '<span class="pred">' + form(pred, 'pred') + '</span>')
+      + '<small>' + T.ally_label + ' <b>' + allies.join('</b>' + T.ally_sep + '<b>') + '</b></small>';
   }
   seats.forEach(function(s){
     s.addEventListener('click', function(){ show(+s.dataset.i); });

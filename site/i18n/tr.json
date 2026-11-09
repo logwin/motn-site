@@ -14,7 +14,6 @@
   "cta_play_now": "Şimdi oyna",
   "cta_windows": "Windows sürümü",
   "cta_itch": "itch.io'dan indir",
-  "cta_feedback": "itch.io'da geri bildirim bırak",
   "kicker": "Vampire: The Eternal Struggle, tarayıcınızda",
   "hero_lede": "Avını kovala. Avcından kurtul. Richard Garfield'ın kart oyunu, beş kişilik gerçek bir masada, kurallar sizin yerinize uygulanarak — ücretsiz, hesapsız, kurulumsuz.",
   "hero_hint": "İlk açılış, kartlar yüklenirken biraz sürer; sonrasında oyun önbellekte kalır. PC veya tablet ekranı önerilir.",
@@ -35,9 +34,13 @@
     "you_prey": "sizi",
     "you_pred": "sizin",
     "you_sentence": "{who}{prey} avlarsınız,<br>{pred} tarafından avlanırsınız",
-    "other_sentence": "{who}{prey} avlar,<br>{pred} tarafından avlanır"
+    "other_sentence": "{who}{prey} avlar,<br>{pred} tarafından avlanır",
+    "ally": "müttefik",
+    "you_ally": "siz",
+    "ally_label": "Masanın karşısındaki müttefikler:",
+    "ally_sep": " ve "
   },
-  "table_caption": "Beş kişide herkes solundaki oyuncuya — avına — saldırır ve sağındakine — avcısına — karşı savunur. Avınız düştüğünde onun avı sizin avınız olur.",
+  "table_caption": "Beş kişide herkes solundaki oyuncuya — avına — saldırır ve sağındakine — avcısına — karşı savunur. Masanın karşısındaki diğer ikisi doğal müttefiklerinizdir: size saldırmaları için hiçbir sebepleri yoktur. Avınız düştüğünde onun avı sizin avınız olur.",
   "what_title": "Vampire: The Eternal Struggle nedir?",
   "what_sub": "1994'te <em>Jyhad</em> adıyla doğdu: Magic'in yaratıcısı Richard Garfield'ın diğer kart oyunu.",
   "what_p1": "Siz bir Methuselah'sınız: o kadar yaşlı bir vampir ki artık yalnızca başkaları aracılığıyla hareket eder. Piyonlarınız, tek tek uyandırdığınız daha genç vampirlerdir ve kan havuzunuz hayatınızdır: sıfıra indiğinde oyundan çıkarsınız.",
@@ -97,5 +100,7 @@
   "cta_title": "Gece <em>sizi bekliyor.</em>",
   "cta_sub": "Beş kişilik bir masa, oturmak için beş dakika.",
   "footer_dp": "Master of the Night, Dark Pack programı kapsamında yayımlanan resmî olmayan bir hayran oyunudur.",
-  "footer_bcp": "Vampire: The Eternal Struggle, Black Chantry Productions tarafından yayımlanır. Bu site ve bu oyun Paradox Interactive veya Black Chantry Productions tarafından üretilmemiş ve onaylanmamıştır."
+  "footer_bcp": "Vampire: The Eternal Struggle, Black Chantry Productions tarafından yayımlanır. Bu site ve bu oyun Paradox Interactive veya Black Chantry Productions tarafından üretilmemiş ve onaylanmamıştır.",
+  "cta_discord": "Discord'a katıl",
+  "cta_feedback_line": "Yanlış davranan bir kart, bir fikir mi var? Discord'da veya itch.io sayfasında söyleyin: her geri bildirim okunur."
 }

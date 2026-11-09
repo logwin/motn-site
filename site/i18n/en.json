@@ -14,7 +14,6 @@
   "cta_play_now": "Play now",
   "cta_windows": "Windows version",
   "cta_itch": "Download on itch.io",
-  "cta_feedback": "Leave feedback on itch.io",
   "kicker": "Vampire: The Eternal Struggle, in your browser",
   "hero_lede": "Hunt your prey. Survive your predator. Richard Garfield's card game on a real five-player table, with the rules enforced for you — free, no account, nothing to install.",
   "hero_hint": "The first launch takes a moment while the cards load; after that the game stays cached. A PC or tablet screen is recommended.",
@@ -33,9 +32,13 @@
     "you_prey": "you",
     "you_pred": "you",
     "you_sentence": "{who}prey on {prey}<br>and are hunted by {pred}",
-    "other_sentence": "{who}preys on {prey}<br>and is hunted by {pred}"
+    "other_sentence": "{who}preys on {prey}<br>and is hunted by {pred}",
+    "ally": "ally",
+    "you_ally": "you",
+    "ally_label": "Cross-table allies:",
+    "ally_sep": " and "
   },
-  "table_caption": "With five players, everyone attacks the player on their left — their prey — and defends against the one on their right — their predator. When your prey falls, their prey becomes yours.",
+  "table_caption": "With five players, everyone attacks the player on their left — their prey — and defends against the one on their right — their predator. The other two, across the table, are your natural allies: nothing drives them to attack you. When your prey falls, their prey becomes yours.",
   "what_title": "What is Vampire: The Eternal Struggle?",
   "what_sub": "Born in 1994 as <em>Jyhad</em>, the other card game by Richard Garfield, the designer of Magic.",
   "what_p1": "You are a Methuselah, a vampire so ancient that you only act through others. Your pawns are younger vampires you awaken one by one, and your pool of blood is your life: when it reaches zero, you are out of the game.",
@@ -95,5 +98,7 @@
   "cta_title": "The night <em>is waiting.</em>",
   "cta_sub": "A five-player table, five minutes to join it.",
   "footer_dp": "Master of the Night is an unofficial fan game published under the Dark Pack programme.",
-  "footer_bcp": "Vampire: The Eternal Struggle is published by Black Chantry Productions. This site and this game are neither produced nor endorsed by Paradox Interactive or Black Chantry Productions."
+  "footer_bcp": "Vampire: The Eternal Struggle is published by Black Chantry Productions. This site and this game are neither produced nor endorsed by Paradox Interactive or Black Chantry Productions.",
+  "cta_discord": "Join the Discord",
+  "cta_feedback_line": "A card misbehaving, an idea? Say so on Discord or on the itch.io page: every report is read."
 }
