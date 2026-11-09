@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Master of the Night</title>
+<meta name="description" content="Master of the Night : jouez à Vampire: The Eternal Struggle dans votre navigateur. Gratuit, avec un tutoriel pas à pas et des adversaires automatiques.">
+<meta property="og:title" content="Master of the Night">
+<meta property="og:description" content="Vampire: The Eternal Struggle, dans votre navigateur. Gratuit.">
+<meta property="og:url" content="https://masterofthenight.com/">
+<link rel="icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#08080a; --panel:#120d0f; --line:#2a1d20;
+    --gold:#b8975a; --goldlit:#e7c56b; --bone:#ddd6c6; --ash:#8f877a;
+    --blood:#5c2121; --bloodlit:#8d3232;
+  }
+  *{box-sizing:border-box}
+  html{background:var(--ink)}
+  body{margin:0;color:var(--bone);background:var(--ink);
+       font:17px/1.6 "Source Sans 3",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--goldlit)}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--goldlit);outline-offset:3px}
+  .wrap{max-width:720px;margin:0 auto;padding:0 20px}
+
+  /* Hero : le titre est l'élément fort, tout le reste reste calme. */
+  .hero{position:relative;padding:14vh 0 9vh;text-align:center;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:-40% -20% auto;height:90%;
+    background:radial-gradient(ellipse at 50% 30%, rgba(141,50,50,.38), rgba(92,33,33,.12) 40%, transparent 70%);
+    pointer-events:none}
+  .hero > *{position:relative}
+  .hero .kicker{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:1.25rem;
+    color:var(--gold);margin:0 0 .6rem}
+  .hero h1{font-family:"Cormorant Garamond",Georgia,serif;font-weight:400;
+    font-size:clamp(3rem,10vw,6.4rem);line-height:.95;letter-spacing:-.01em;margin:0;color:var(--bone)}
+  .hero h1 em{font-style:italic;font-weight:500;color:var(--goldlit)}
+  .hero p.lead{font-size:1.2rem;max-width:34em;margin:1.6rem auto 2.2rem;color:var(--bone)}
+  .rule{width:72px;height:1px;background:var(--gold);margin:2rem auto 0;opacity:.8}
+
+  .actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-block;padding:14px 28px;border-radius:3px;text-decoration:none;font-weight:600;
+       font-size:1.05rem;border:1px solid var(--gold);transition:background .15s,color .15s}
+  .btn.primary{background:#33161a;color:var(--goldlit)}
+  .btn.primary:hover{background:var(--bloodlit);color:#fff}
+  .btn.ghost{color:var(--bone);border-color:var(--line)}
+  .btn.ghost:hover{border-color:var(--gold);color:var(--goldlit)}
+  .hint{font-size:.9rem;color:var(--ash);margin:1rem 0 0}
+
+  section{padding:3.2rem 0;border-top:1px solid var(--line)}
+  h2{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;font-size:2rem;line-height:1.15;
+     margin:0 0 1rem;color:var(--goldlit)}
+  p{margin:0 0 1rem;max-width:62ch}
+
+  /* Trois façons de jouer : des colonnes, pas des cartes. */
+  .ways{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:28px 32px;margin-top:1.6rem}
+  .ways h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;font-size:1.45rem;margin:0 0 .4rem;
+           color:var(--bone);padding-top:.7rem;border-top:1px solid var(--gold)}
+  .ways p{font-size:1rem;color:var(--bone);margin:0}
+
+  dl{display:grid;grid-template-columns:max-content 1fr;gap:.4rem 1.4rem;margin:0;max-width:62ch}
+  dt{color:var(--ash)}
+  dd{margin:0}
+
+  footer{border-top:1px solid var(--line);padding:2.4rem 0 3rem;font-size:.88rem;color:var(--ash)}
+  footer .dp{display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap}
+  footer img{width:96px;height:96px;object-fit:contain;flex:0 0 auto}
+  footer .dp > div{flex:1 1 320px}
+  footer p{max-width:70ch;margin:0 0 .6rem}
+  footer nav{margin-top:1.4rem;display:flex;gap:18px;flex-wrap:wrap}
+  footer nav a{color:var(--ash)}
+  footer nav a:hover{color:var(--goldlit)}
+
+  @media (max-width:520px){
+    .hero{padding-top:10vh}
+    .btn{width:100%;text-align:center}
+    dl{grid-template-columns:1fr;gap:.1rem}
+    dt{margin-top:.6rem}
+  }
+  @media (prefers-reduced-motion:reduce){ .btn{transition:none} }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">Vampire: The Eternal Struggle, dans votre navigateur</p>
+    <h1>Master <em>of the</em> Night</h1>
+    <p class="lead">Le jeu de cartes de Richard Garfield, joué sur une vraie table : cinq joueurs, le sang, les votes, la proie à votre gauche et le prédateur à votre droite. Gratuit, sans compte, sans rien à installer.</p>
+    <div class="actions">
+      <a class="btn primary" href="https://game.masterofthenight.com/">Jouer dans le navigateur</a>
+      <a class="btn ghost" href="https://logwin.itch.io/vtesmobilewindows">Télécharger pour Windows</a>
+    </div>
+    <p class="hint">Premier chargement d'environ 150 Mo, puis le jeu reste en cache. Un écran de PC ou de tablette est conseillé.</p>
+    <div class="rule"></div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <h2>Le jeu, tel qu'il se joue à la table</h2>
+    <p>Chaque joueur dirige une coterie de vampires et cherche à éliminer sa proie, assise à sa gauche, pendant que son prédateur, à sa droite, en fait autant. Transferts de sang, actions, blocages, combats, référendums : tout le tour de jeu est là, et c'est le moteur qui applique les règles, cartes comprises. Vous vous concentrez sur ce que vous voulez faire ; la table sait ce qui est permis.</p>
+    <p>Les cartes, leurs textes et leurs effets suivent les règles officielles. Quand une carte vous laisse un choix, le jeu vous le présente ; quand elle ne vous en laisse pas, il tranche à votre place et vous le dit dans le journal.</p>
+  </section>
+
+  <section>
+    <h2>Trois façons de s'y mettre</h2>
+    <div class="ways">
+      <div>
+        <h3>Apprendre</h3>
+        <p>Treize leçons jouées sur la vraie table, pas sur un plateau simulé : votre côté de la table, les phases, le premier bleed, le premier blocage, un combat complet, la torpeur, les alliés, les votes. Chaque leçon est racontée à voix haute, en six langues.</p>
+      </div>
+      <div>
+        <h3>S'entraîner</h3>
+        <p>Des adversaires automatiques qui jouent leur deck, bloquent quand ça compte et savent sortir de torpeur. De quoi monter une table à cinq à n'importe quelle heure.</p>
+      </div>
+      <div>
+        <h3>Jouer entre amis</h3>
+        <p>Partagez une table en ligne avec les joueurs de votre choix. La même table, les mêmes règles, chacun depuis son navigateur ou son PC.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Ce qu'il faut pour jouer</h2>
+    <dl>
+      <dt>Navigateur</dt><dd>Chrome, Edge, Firefox ou Safari récents, sur PC, Mac ou tablette.</dd>
+      <dt>Connexion</dt><dd>Environ 150 Mo au premier lancement. Les lancements suivants partent du cache.</dd>
+      <dt>Windows</dt><dd>Une version à télécharger existe aussi, plus légère à l'usage et mise à jour depuis le jeu.</dd>
+      <dt>Prix</dt><dd>Gratuit, sans achat intégré, sans publicité, sans compte.</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Un problème, une idée ?</h2>
+    <p>Le jeu est en développement actif et les retours des joueurs décident de la suite. Si une carte se comporte mal ou si quelque chose vous manque, dites-le sur la page itch.io : chaque signalement est lu.</p>
+    <p><a href="https://logwin.itch.io/vtesmobilewindows">Laisser un retour sur itch.io</a></p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="dp">
+      <img src="darkpack.png" alt="Logo Dark Pack" width="96" height="96">
+      <div>
+        <p>Master of the Night est un jeu de fans, non officiel, publié dans le cadre du programme Dark Pack. Portions of the materials are the copyrights and trademarks of Paradox Interactive AB, and are used with permission. All rights reserved. For more information please visit <a href="https://www.worldofdarkness.com/">worldofdarkness.com</a>.</p>
+        <p>Vampire: The Eternal Struggle est publié par Black Chantry Productions. Ce site et ce jeu ne sont ni produits ni approuvés par Paradox Interactive ou Black Chantry Productions.</p>
+      </div>
+    </div>
+    <nav>
+      <a href="https://game.masterofthenight.com/">Jouer</a>
+      <a href="https://logwin.itch.io/vtesmobilewindows">itch.io</a>
+      <a href="https://www.blackchantry.com/">Black Chantry Productions</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
