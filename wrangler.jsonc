@@ -1,0 +1,11 @@
+{
+  // Site vitrine de masterofthenight.com — fichiers statiques servis par Cloudflare Workers.
+  // Le jeu lui-même est un autre Worker (dépôt motn), servi sur game.masterofthenight.com.
+  "name": "masterofthenight-site",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  }
+}
