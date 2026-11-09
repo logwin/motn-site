@@ -84,7 +84,7 @@
   "faq3_q": "How do I play with my friends?",
   "faq3_a": "Create an online table from the game and have your friends join it, from two to five players. The remaining seats can be given to AI opponents, or left empty for a shorter table.",
   "faq4_q": "Do I need an account?",
-  "faq4_a": "Not to play: open the page and you are at the table, tutorial and games included. An optional account keeps your decks from one launch to the next, and will carry what comes next, such as statistics on your games.",
+  "faq4_a": "Not to play: open the page and you are at the table, tutorial and games included. An optional account keeps your decks from one launch to the next, and will carry what comes next, such as statistics on your games. It only asks for an email address, a nickname and a password.",
   "faq5_q": "Why is the first load long?",
   "faq5_a": "The game ships the text and images of every card. Your browser keeps them cached after the first launch, and the next ones are much faster.",
   "faq6_q": "Does it work on a phone?",
