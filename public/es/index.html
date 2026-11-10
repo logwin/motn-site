@@ -25,7 +25,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#08080a">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 64x64">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="/fonts/cormorant.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/sourcesans3.woff2" as="font" type="font/woff2" crossorigin>
@@ -60,7 +60,8 @@
   /* Navigation */
   .nav{position:fixed;inset:0 0 auto;z-index:10;background:rgba(8,8,10,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   .nav .wrap{display:flex;align-items:center;gap:28px;height:64px}
-  .brand{font-family:var(--display);font-size:1.35rem;color:var(--bone);text-decoration:none;letter-spacing:.01em;white-space:nowrap}
+  .brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:1.35rem;color:var(--bone);text-decoration:none;letter-spacing:.01em;white-space:nowrap}
+  .brand img{width:40px;height:40px;flex:none}
   .brand em{font-style:italic;color:var(--goldlit)}
   .nav ul{display:flex;gap:26px;list-style:none;margin:0 0 0 auto;padding:0}
   .nav li a{color:var(--bone);text-decoration:none;font-size:1rem}
@@ -99,6 +100,7 @@
     background:radial-gradient(ellipse at 30% 25%, rgba(141,50,50,.34), rgba(92,33,33,.1) 42%, transparent 70%)}
   .hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:48px;align-items:center}
   .kicker{font-family:var(--display);font-style:italic;font-size:1.3rem;color:var(--gold);margin:0 0 .8rem}
+  .hero .logo{width:min(250px,48vw);height:auto;margin:-24px 0 .4rem -14px}
   .hero h1{font-weight:400;font-size:clamp(3.2rem,7.2vw,6rem);letter-spacing:-.012em;line-height:.95}
   .hero h1 em{font-style:italic;font-weight:500;color:var(--goldlit)}
   .hook{font-family:var(--display);font-style:italic;font-size:clamp(1.5rem,2.6vw,2.1rem);line-height:1.2;color:var(--goldlit);margin:1.4rem 0 0;max-width:22em}
@@ -197,7 +199,7 @@
 
 <header class="nav">
   <div class="wrap">
-    <a class="brand" href="#top">Master <em>of the</em> Night</a>
+    <a class="brand" href="#top"><img src="/logo-256.png" alt="" width="40" height="40">Master <em>of the</em> Night</a>
     <ul class="menu">
       <li><a href="#jeu">El juego</a></li>
       <li><a href="#apprendre">Aprender</a></li>
@@ -226,6 +228,7 @@
 <div class="hero">
   <div class="wrap">
     <div>
+      <img class="logo" src="/logo-640.png" alt="" width="250" height="250" fetchpriority="high">
       <p class="kicker">Vampire: The Eternal Struggle, en tu navegador</p>
       <h1>Master <em>of the</em> Night</h1>
       <p class="hook">Caza a tu presa. Sobrevive a tu depredador.</p>

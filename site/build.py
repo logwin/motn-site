@@ -53,7 +53,7 @@ for lang in LANGS:
     sections = "".join(f"<h2>{hd}</h2><p>{tx}</p>" for hd, tx in pv["s"])
     body = f"""<body>
 <header class="nav"><div class="wrap">
-  <a class="brand" href="/{lang}/">Master <em>of the</em> Night</a>
+  <a class="brand" href="/{lang}/"><img src="/logo-256.png" alt="" width="40" height="40">Master <em>of the</em> Night</a>
   <ul class="menu"><li><a href="/{lang}/#jeu">{t["nav_game"]}</a></li><li><a href="/{lang}/#apprendre">{t["nav_learn"]}</a></li><li><a href="/{lang}/#plateformes">{t["nav_platforms"]}</a></li><li><a href="/{lang}/#faq">{t["nav_faq"]}</a></li></ul>
   <details class="lang"><summary aria-label="{t["lang_label"]}">{lang}</summary><ul>{links}</ul></details>
   <a class="btn primary" href="https://game.masterofthenight.com/"><span class="long">{t["cta_play"]}</span><span class="short">{t["nav_play"]}</span></a>
