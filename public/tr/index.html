@@ -147,6 +147,11 @@
   .two.flip > :first-child{order:2}
   @media (max-width:900px){.two,.two.flip{grid-template-columns:1fr;gap:28px}.two.flip > :first-child{order:0}}
   .sticky{position:sticky;top:96px}
+  .what-shot{margin:1.8rem 0 0}
+  .what-shot img{width:100%;height:auto;border:1px solid var(--line);border-radius:3px;background:#000}
+  .what-shot a:hover img{border-color:var(--gold)}
+  .what-shot figcaption{font-size:.92rem;color:var(--ash);margin-top:.6rem}
+  @media (max-width:900px){.what-shot{display:none}}
   @media (max-width:900px){.sticky{position:static}}
 
   .shots{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:2rem}
@@ -271,6 +276,7 @@
     <div class="sticky">
       <h2>Vampire: The Eternal Struggle nedir?</h2>
       <p class="muted">1994'te <em>Jyhad</em> adıyla doğdu: Magic'in yaratıcısı Richard Garfield'ın diğer kart oyunu.</p>
+      <figure class="what-shot"><a href="/shots/bleed-1280.webp"><img src="/shots/bleed-640.webp" srcset="/shots/bleed-640.webp 640w, /shots/bleed-1280.webp 1280w" sizes="(max-width:900px) 100vw, 460px" alt="" width="1280" height="720" loading="lazy" decoding="async"></a><figcaption>Avcınız sizi bleed ediyor: oyun, bloklayıp bloklamayacağınızı ve kiminle bloklayacağınızı sorar.</figcaption></figure>
     </div>
     <div>
       <p class="lede">Siz bir Methuselah'sınız: o kadar yaşlı bir vampir ki artık yalnızca başkaları aracılığıyla hareket eder. Piyonlarınız, tek tek uyandırdığınız daha genç vampirlerdir ve kan havuzunuz hayatınızdır: sıfıra indiğinde oyundan çıkarsınız.</p>

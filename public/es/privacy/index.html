@@ -147,6 +147,11 @@
   .two.flip > :first-child{order:2}
   @media (max-width:900px){.two,.two.flip{grid-template-columns:1fr;gap:28px}.two.flip > :first-child{order:0}}
   .sticky{position:sticky;top:96px}
+  .what-shot{margin:1.8rem 0 0}
+  .what-shot img{width:100%;height:auto;border:1px solid var(--line);border-radius:3px;background:#000}
+  .what-shot a:hover img{border-color:var(--gold)}
+  .what-shot figcaption{font-size:.92rem;color:var(--ash);margin-top:.6rem}
+  @media (max-width:900px){.what-shot{display:none}}
   @media (max-width:900px){.sticky{position:static}}
 
   .shots{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:2rem}

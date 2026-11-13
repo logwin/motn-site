@@ -147,6 +147,11 @@
   .two.flip > :first-child{order:2}
   @media (max-width:900px){.two,.two.flip{grid-template-columns:1fr;gap:28px}.two.flip > :first-child{order:0}}
   .sticky{position:sticky;top:96px}
+  .what-shot{margin:1.8rem 0 0}
+  .what-shot img{width:100%;height:auto;border:1px solid var(--line);border-radius:3px;background:#000}
+  .what-shot a:hover img{border-color:var(--gold)}
+  .what-shot figcaption{font-size:.92rem;color:var(--ash);margin-top:.6rem}
+  @media (max-width:900px){.what-shot{display:none}}
   @media (max-width:900px){.sticky{position:static}}
 
   .shots{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:2rem}
@@ -271,6 +276,7 @@
     <div class="sticky">
       <h2>Qu'est-ce que Vampire: The Eternal Struggle ?</h2>
       <p class="muted">Né en 1994 sous le nom de <em>Jyhad</em>, l'autre jeu de cartes de Richard Garfield, l'auteur de Magic.</p>
+      <figure class="what-shot"><a href="/shots/bleed-1280.webp"><img src="/shots/bleed-640.webp" srcset="/shots/bleed-640.webp 640w, /shots/bleed-1280.webp 1280w" sizes="(max-width:900px) 100vw, 460px" alt="" width="1280" height="720" loading="lazy" decoding="async"></a><figcaption>Votre prédateur vous saigne : le jeu vous demande si vous bloquez, et avec qui.</figcaption></figure>
     </div>
     <div>
       <p class="lede">Vous êtes un Mathusalem, un vampire si ancien qu'il n'agit plus que par procuration. Vos pions sont des vampires plus jeunes que vous réveillez un à un, et votre réserve de sang est votre vie : quand elle tombe à zéro, vous sortez de la partie.</p>
