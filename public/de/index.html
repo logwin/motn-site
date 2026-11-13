@@ -292,10 +292,10 @@
     <div class="shots">
       <figure class="wide"><a href="/shots/table-1280.webp"><img src="/shots/table-1280.webp" srcset="/shots/table-640.webp 640w, /shots/table-1280.webp 1280w" sizes="(max-width:760px) 100vw, 1152px" alt="" width="1280" height="720" loading="lazy" decoding="async"></a><figcaption>Der Tisch zu fünft: deine Vampire unten, die vier anderen Methusalems oben, deine Beute und dein Jäger markiert.</figcaption></figure>
       <figure><a href="/shots/bleed-1280.webp"><img src="/shots/bleed-1280.webp" srcset="/shots/bleed-640.webp 640w, /shots/bleed-1280.webp 1280w" sizes="(max-width:760px) 100vw, 562px" alt="" width="1280" height="720" loading="lazy" decoding="async"></a><figcaption>Dein Jäger blutet dich: Das Spiel fragt, ob du blockst und mit wem.</figcaption></figure>
-      <figure><a href="/shots/council-1280.webp"><img src="/shots/council-1280.webp" srcset="/shots/council-640.webp 640w, /shots/council-1280.webp 1280w" sizes="(max-width:760px) 100vw, 562px" alt="" width="1280" height="720" loading="lazy" decoding="async"></a><figcaption>Der Rat: Zieh deine Stimmen auf Dafür oder Dagegen und bestätige.</figcaption></figure>
+      <figure><video src="/shots/council.mp4" poster="/shots/council-1280.webp" width="1280" height="720" muted loop playsinline controls preload="none"></video><figcaption>Der Rat: Zieh deine Stimmen auf Dafür oder Dagegen und bestätige.</figcaption></figure>
       <figure><a href="/shots/combat-1280.webp"><img src="/shots/combat-1280.webp" srcset="/shots/combat-640.webp 640w, /shots/combat-1280.webp 1280w" sizes="(max-width:760px) 100vw, 562px" alt="" width="1280" height="720" loading="lazy" decoding="async"></a><figcaption>Der Kampf: Wähle deinen Schlag, mit Waffe oder mit bloßen Händen.</figcaption></figure>
       <figure><a href="/shots/resolution-1000.webp"><img src="/shots/resolution-1000.webp" srcset="/shots/resolution-640.webp 640w, /shots/resolution-1000.webp 1000w" sizes="(max-width:760px) 100vw, 562px" alt="" width="1280" height="720" loading="lazy" decoding="async"></a><figcaption>Nach jeder Aktion schreibt das Spiel auf, was passiert ist und warum, samt Rechnung.</figcaption></figure>
-      <figure class="wide"><video id="deckVideo" src="/shots/deckbuilder.mp4" poster="/shots/deckbuilder-poster.webp" width="1280" height="720" muted loop playsinline controls preload="none"></video><figcaption>Die Deck-Werkstatt: Krypta, Bibliothek, Statistiken und die Details jeder Karte.</figcaption></figure>
+      <figure class="wide"><video src="/shots/deckbuilder.mp4" poster="/shots/deckbuilder-poster.webp" width="1280" height="720" muted loop playsinline controls preload="none"></video><figcaption>Die Deck-Werkstatt: Krypta, Bibliothek, Statistiken und die Details jeder Karte.</figcaption></figure>
     </div>
   </div>
 </section>
@@ -442,12 +442,12 @@ document.querySelectorAll('.nav details').forEach(function(d){
 </script>
 <script>
 (function(){
-  var v = document.getElementById('deckVideo');
-  if (!v || !('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  v.removeAttribute('controls');
-  new IntersectionObserver(function(es){
-    es.forEach(function(e){ if (e.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function(){ v.setAttribute('controls',''); }); } else v.pause(); });
-  }, {threshold:.35}).observe(v);
+  if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ var v = e.target;
+      if (e.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function(){ v.setAttribute('controls',''); }); } else v.pause(); });
+  }, {threshold:.35});
+  document.querySelectorAll('.shots video').forEach(function(v){ v.removeAttribute('controls'); io.observe(v); });
 })();
 </script>
 </body>
