@@ -149,6 +149,15 @@
   .sticky{position:sticky;top:96px}
   @media (max-width:900px){.sticky{position:static}}
 
+  .shots{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:2rem}
+  .shots figure{margin:0}
+  .shots .wide{grid-column:1/-1}
+  .shots a{display:block}
+  .shots img,.shots video{width:100%;height:auto;border:1px solid var(--line);border-radius:3px;background:#000}
+  .shots a:hover img{border-color:var(--gold)}
+  .shots figcaption{font-size:.95rem;color:var(--ash);margin-top:.6rem;max-width:62ch}
+  @media (max-width:760px){.shots{grid-template-columns:1fr;gap:22px}}
+
   .ways{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:36px 40px;margin-top:2rem}
   .ways h3{padding-top:.8rem;border-top:1px solid var(--gold)}
   .ways p{font-size:1.02rem;margin:0}

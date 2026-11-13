@@ -149,6 +149,15 @@
   .sticky{position:sticky;top:96px}
   @media (max-width:900px){.sticky{position:static}}
 
+  .shots{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:2rem}
+  .shots figure{margin:0}
+  .shots .wide{grid-column:1/-1}
+  .shots a{display:block}
+  .shots img,.shots video{width:100%;height:auto;border:1px solid var(--line);border-radius:3px;background:#000}
+  .shots a:hover img{border-color:var(--gold)}
+  .shots figcaption{font-size:.95rem;color:var(--ash);margin-top:.6rem;max-width:62ch}
+  @media (max-width:760px){.shots{grid-template-columns:1fr;gap:22px}}
+
   .ways{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:36px 40px;margin-top:2rem}
   .ways h3{padding-top:.8rem;border-top:1px solid var(--gold)}
   .ways p{font-size:1.02rem;margin:0}
@@ -276,6 +285,21 @@
   </div>
 </section>
 
+<section id="images">
+  <div class="wrap">
+    <h2>The game in pictures</h2>
+    <p class="lede">Screenshots taken during a game (interface shown in French).</p>
+    <div class="shots">
+      <figure class="wide"><a href="/shots/table-1280.webp"><img src="/shots/table-1280.webp" srcset="/shots/table-640.webp 640w, /shots/table-1280.webp 1280w" sizes="(max-width:760px) 100vw, 1152px" alt="" width="1280" height="720" loading="lazy" decoding="async"></a><figcaption>The five-player table: your vampires at the bottom, the four other Methuselahs at the top, your prey and your predator marked.</figcaption></figure>
+      <figure><a href="/shots/bleed-1280.webp"><img src="/shots/bleed-1280.webp" srcset="/shots/bleed-640.webp 640w, /shots/bleed-1280.webp 1280w" sizes="(max-width:760px) 100vw, 562px" alt="" width="1280" height="720" loading="lazy" decoding="async"></a><figcaption>Your predator bleeds you: the game asks whether you block, and with whom.</figcaption></figure>
+      <figure><a href="/shots/council-1280.webp"><img src="/shots/council-1280.webp" srcset="/shots/council-640.webp 640w, /shots/council-1280.webp 1280w" sizes="(max-width:760px) 100vw, 562px" alt="" width="1280" height="720" loading="lazy" decoding="async"></a><figcaption>The Council: drag your votes to For or Against, then confirm.</figcaption></figure>
+      <figure><a href="/shots/combat-1280.webp"><img src="/shots/combat-1280.webp" srcset="/shots/combat-640.webp 640w, /shots/combat-1280.webp 1280w" sizes="(max-width:760px) 100vw, 562px" alt="" width="1280" height="720" loading="lazy" decoding="async"></a><figcaption>Combat: choose your strike, with a weapon or bare hands.</figcaption></figure>
+      <figure><a href="/shots/resolution-1000.webp"><img src="/shots/resolution-1000.webp" srcset="/shots/resolution-640.webp 640w, /shots/resolution-1000.webp 1000w" sizes="(max-width:760px) 100vw, 562px" alt="" width="1280" height="720" loading="lazy" decoding="async"></a><figcaption>After each action, the game writes down what happened and why, with the maths.</figcaption></figure>
+      <figure class="wide"><video id="deckVideo" src="/shots/deckbuilder.mp4" poster="/shots/deckbuilder-poster.webp" width="1280" height="720" muted loop playsinline controls preload="none"></video><figcaption>The deck workshop: crypt, library, statistics and the details of every card.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
 <section id="apprendre" class="wine">
   <div class="wrap">
     <h2>Learn, practise, play, build</h2>
@@ -366,7 +390,7 @@
   var arcPrey = document.getElementById('arcPrey');
   var arcPred = document.getElementById('arcPred');
   var T = JSON.parse(table.getAttribute('data-i18n'));
-  var names = [T.you,'Aline','Nash','Ivan','Fanchon'];
+  var names = [T.you,'Caïn','Lilith','Abel','Samaël'];
   var N = 5, R = 40, cx = 50, cy = 50;
   function pos(i){ var a = (90 + i*360/N) * Math.PI/180; return [cx + R*Math.cos(a), cy + R*Math.sin(a)]; }
   function arc(i, j, sweep){ var p = pos(i), q = pos(j); return 'M'+p[0].toFixed(2)+' '+p[1].toFixed(2)+' A'+R+' '+R+' 0 0 '+sweep+' '+q[0].toFixed(2)+' '+q[1].toFixed(2); }
@@ -415,6 +439,16 @@ document.querySelectorAll('.nav details').forEach(function(d){
   d.addEventListener('click', function(e){ if (e.target.closest('a')) d.removeAttribute('open'); });
   document.addEventListener('click', function(e){ if (!d.contains(e.target)) d.removeAttribute('open'); });
 });
+</script>
+<script>
+(function(){
+  var v = document.getElementById('deckVideo');
+  if (!v || !('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  v.removeAttribute('controls');
+  new IntersectionObserver(function(es){
+    es.forEach(function(e){ if (e.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function(){ v.setAttribute('controls',''); }); } else v.pause(); });
+  }, {threshold:.35}).observe(v);
+})();
 </script>
 </body>
 </html>
