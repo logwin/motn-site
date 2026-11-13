@@ -125,7 +125,7 @@
   "privacy": {
     "nav_privacy": "Privacidad y contacto",
     "title": "Privacidad y contacto",
-    "updated": "Actualizado el 9 de noviembre de 2026",
+    "updated": "Actualizado el 13 de noviembre de 2026",
     "intro": "Master of the Night es un juego de aficionados, gratuito, sin publicidad y sin compras integradas. Solo recoge lo que necesita para funcionar. Esta página dice qué, por qué, dónde y cómo hacerlo borrar.",
     "s": [
       [
@@ -144,6 +144,7 @@
         "Los avisos enviados desde el juego",
         "Cuando informas de un problema desde el juego, se envían el texto que escribes y el estado de la partida afectada para que podamos reproducir el fallo. No sirven para nada más."
       ],
+        ["Estadísticas anónimas de partida", "Al final de cada partida, el juego envía un resumen anónimo: la versión del juego, el número de jugadores, si la partida era en línea, si se jugó hasta el final, el número de turnos, la lista de cartas que se usaron (con cuántas veces) y las decisiones que la interfaz tuvo que mostrar como lista. Este resumen no contiene cuenta, apodo, dirección ni identificador del dispositivo: nada lo relaciona contigo. Sirve para encontrar las cartas que nunca se han jugado, confirmar las que funcionan y mejorar la interfaz."],
       [
         "Servicios de terceros",
         "La página de itch.io y el servidor de Discord los gestionan esos servicios, con sus propias normas. Solo vemos lo que publicas allí."

@@ -127,7 +127,7 @@
   "privacy": {
     "nav_privacy": "Gizlilik ve iletişim",
     "title": "Gizlilik ve iletişim",
-    "updated": "Güncelleme: 9 Kasım 2026",
+    "updated": "Güncelleme: 13 Kasım 2026",
     "intro": "Master of the Night; ücretsiz, reklamsız ve uygulama içi satın alımsız bir hayran oyunudur. Yalnızca çalışmak için gerekeni toplar. Bu sayfa neyi, neden, nerede ve nasıl sildirebileceğinizi anlatır.",
     "s": [
       [
@@ -146,6 +146,7 @@
         "Oyundan gönderilen bildirimler",
         "Oyundan bir sorun bildirdiğinizde, yazdığınız metin ve ilgili oyunun durumu, hatayı yeniden üretebilmemiz için gönderilir. Başka hiçbir amaçla kullanılmaz."
       ],
+        ["Anonim oyun istatistikleri", "Her oyunun sonunda oyun anonim bir özet gönderir: oyun sürümü, oyuncu sayısı, oyunun çevrim içi olup olmadığı, sonuna kadar oynanıp oynanmadığı, tur sayısı, kullanılan kartların listesi (kaç kez kullanıldıklarıyla) ve arayüzün liste olarak göstermek zorunda kaldığı seçimler. Bu özet hesap, kullanıcı adı, adres ya da cihaz kimliği içermez: hiçbir şey onu size bağlamaz. Hiç oynanmamış kartları bulmak, çalışanları doğrulamak ve arayüzü geliştirmek için kullanılır."],
       [
         "Üçüncü taraf hizmetler",
         "itch.io sayfası ve Discord sunucusu, kendi kurallarıyla bu hizmetler tarafından işletilir. Orada yalnızca sizin paylaştıklarınızı görürüz."
