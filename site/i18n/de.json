@@ -125,7 +125,7 @@
   "privacy": {
     "nav_privacy": "Datenschutz und Kontakt",
     "title": "Datenschutz und Kontakt",
-    "updated": "Aktualisiert am 13. November 2026",
+    "updated": "Aktualisiert am 14. November 2026",
     "intro": "Master of the Night ist ein kostenloses Fanspiel ohne Werbung und ohne In-App-Käufe. Es erhebt nur, was es zum Funktionieren braucht. Diese Seite sagt was, warum, wo und wie man es löschen lässt.",
     "s": [
       [
@@ -145,6 +145,7 @@
         "Meldest du aus dem Spiel ein Problem, werden dein eingegebener Text und der Zustand der betroffenen Partie übermittelt, damit wir den Fehler nachstellen können. Sie dienen nur dazu."
       ],
         ["Anonyme Spielstatistiken", "Am Ende jeder Partie sendet das Spiel eine anonyme Zusammenfassung: die Spielversion, die Zahl der Spieler, ob online gespielt wurde, ob die Partie zu Ende gespielt wurde, die Zahl der Runden, die Liste der verwendeten Karten (mit Anzahl) und die Entscheidungen, die die Oberfläche als Liste anzeigen musste. Sie enthält weder Konto noch Spielernamen, Adresse oder Gerätekennung: nichts verbindet sie mit dir. Sie dient dazu, nie gespielte Karten zu finden, funktionierende zu bestätigen und die Oberfläche zu verbessern."],
+        ["Zählung der aktiven Spieler", "Um zu wissen, wie viele Menschen spielen, sendet das Spiel höchstens einmal pro Tag beim Start ein Lebenszeichen: eine zufällig erzeugte Installationskennung, die auf deinem Gerät gespeichert bleibt, das Datum, die Spielversion und die Plattform (Web, Windows, Android …). Diese Kennung verrät nichts über dich oder dein Gerät und ist mit keinem Konto verknüpft: Sie dient nur dazu, jede Installation einmal pro Tag zu zählen. Diese Einträge werden nach 400 Tagen gelöscht. Für eine neue Kennung genügt es, die Daten des Spiels (oder der Website) auf deinem Gerät zu löschen."],
       [
         "Dienste Dritter",
         "Die itch.io-Seite und der Discord-Server werden von diesen Diensten nach eigenen Regeln betrieben. Wir sehen dort nur, was du veröffentlichst."

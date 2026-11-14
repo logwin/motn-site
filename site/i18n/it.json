@@ -125,7 +125,7 @@
   "privacy": {
     "nav_privacy": "Privacy e contatti",
     "title": "Privacy e contatti",
-    "updated": "Aggiornato il 13 novembre 2026",
+    "updated": "Aggiornato il 14 novembre 2026",
     "intro": "Master of the Night è un gioco amatoriale, gratuito, senza pubblicità e senza acquisti in-app. Raccoglie solo ciò che gli serve per funzionare. Questa pagina dice cosa, perché, dove e come farlo cancellare.",
     "s": [
       [
@@ -145,6 +145,7 @@
         "Quando segnali un problema dal gioco, il testo che scrivi e lo stato della partita interessata vengono inviati perché possiamo riprodurre il difetto. Non servono ad altro."
       ],
         ["Statistiche anonime delle partite", "Alla fine di ogni partita, il gioco invia un riepilogo anonimo: la versione del gioco, il numero di giocatori, se la partita era online, se è stata giocata fino alla fine, il numero di turni, l'elenco delle carte usate (con quante volte) e le scelte che l'interfaccia ha dovuto mostrare come elenco. Il riepilogo non contiene account, nome utente, indirizzo né identificativo del dispositivo: nulla lo collega a te. Serve a trovare le carte mai giocate, a confermare quelle che funzionano e a migliorare l'interfaccia."],
+        ["Il conteggio dei giocatori attivi", "Per sapere quante persone giocano, il gioco invia un segnale di vita al massimo una volta al giorno, all'avvio: un identificativo di installazione generato a caso e conservato sul tuo dispositivo, la data, la versione del gioco e la piattaforma (web, Windows, Android…). Questo identificativo non dice nulla di te né del tuo dispositivo e non è collegato ad alcun account: serve solo a contare ogni installazione una volta al giorno. Questi dati vengono cancellati dopo 400 giorni. Per ripartire con un nuovo identificativo basta cancellare i dati del gioco (o del sito) sul tuo dispositivo."],
       [
         "Servizi di terzi",
         "La pagina itch.io e il server Discord sono gestiti da quei servizi, con le loro regole. Vediamo solo ciò che vi pubblichi."

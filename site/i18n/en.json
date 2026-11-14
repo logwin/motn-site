@@ -125,7 +125,7 @@
   "privacy": {
     "nav_privacy": "Privacy and contact",
     "title": "Privacy and contact",
-    "updated": "Updated 13 November 2026",
+    "updated": "Updated 14 November 2026",
     "intro": "Master of the Night is a free fan game, with no ads and no in-app purchases. It collects only what it needs to work. This page says what, why, where, and how to have it erased.",
     "s": [
       [
@@ -145,6 +145,7 @@
         "When you report a problem from the game, the text you type and the state of the game in question are sent so that we can reproduce the fault. They are used for nothing else."
       ],
         ["Anonymous game statistics", "At the end of each game, the game sends an anonymous summary: the game version, the number of players, whether the game was online, whether it was played to the end, the number of turns, the list of cards that were used (with how many times) and the choices the interface had to show as a list. This summary contains no account, no username, no address and no device identifier: nothing links it to you. It is used to find cards that have never been played, to confirm those that work, and to improve the interface."],
+        ["Counting active players", "To know how many people play, the game sends a sign of life at most once a day, when it starts: a randomly generated installation identifier kept on your device, the date, the game version and the platform (web, Windows, Android…). This identifier says nothing about you or your device and is not linked to any account: it is only used to count each installation once per day. These records are deleted after 400 days. To start over with a new identifier, simply clear the game's (or the site's) data on your device."],
       [
         "Third-party services",
         "The itch.io page and the Discord server are run by those services, under their own rules. We only see what you post there."
