@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Master of the Night — statistiques</title>
+<meta name="description" content="Combien de monde joue à Master of the Night : installations actives, plateformes, parties et joueurs en ligne, mis à jour en continu.">
+<link rel="canonical" href="https://masterofthenight.com/stats/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Master of the Night">
+<meta property="og:title" content="Master of the Night — statistiques">
+<meta property="og:description" content="Installations actives, plateformes, parties et joueurs en ligne, mis à jour en continu.">
+<meta property="og:url" content="https://masterofthenight.com/stats/">
+<meta property="og:image" content="https://masterofthenight.com/og.png">
+<meta name="theme-color" content="#08080a">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 64x64">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/fonts/cormorant.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/sourcesans3.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face{font-family:"Cormorant Garamond";src:url(/fonts/cormorant.woff2) format("woff2");font-weight:300 700;font-style:normal;font-display:swap}
+  @font-face{font-family:"Cormorant Garamond";src:url(/fonts/cormorant-italic.woff2) format("woff2");font-weight:300 700;font-style:italic;font-display:swap}
+  @font-face{font-family:"Source Sans 3";src:url(/fonts/sourcesans3.woff2) format("woff2");font-weight:200 900;font-style:normal;font-display:swap}
+  /* Mêmes jetons que la page d'accueil : nuit, or, os. Une colonne de cartes, la donnée d'abord. */
+  :root{
+    --ink:#08080a; --panel:#120d0f; --line:#2a1d20;
+    --gold:#b8975a; --goldlit:#e7c56b; --bone:#ddd6c6; --ash:#8f877a;
+    --bloodlit:#8d3232; --cool:#5a7f9c; --grid:#241a1c;
+    --display:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+    --text:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;
+    --wrap:1100px;
+    color-scheme:dark;
+  }
+  *{box-sizing:border-box}
+  html{background:var(--ink)}
+  body{margin:0;color:var(--bone);background:var(--ink);font:17px/1.55 var(--text);-webkit-font-smoothing:antialiased}
+  a{color:var(--goldlit)}
+  a:focus-visible{outline:2px solid var(--goldlit);outline-offset:3px}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+  .nav{border-bottom:1px solid var(--line);background:rgba(8,8,10,.92)}
+  .nav .wrap{display:flex;align-items:center;gap:20px;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:1.3rem;color:var(--bone);text-decoration:none;white-space:nowrap}
+  .brand img{width:36px;height:36px}
+  .brand em{font-style:italic;color:var(--goldlit)}
+  .nav .play{margin-left:auto;color:var(--ink);background:var(--gold);text-decoration:none;padding:8px 16px;border-radius:3px;font-weight:600;font-size:.95rem;white-space:nowrap}
+  .nav .play:hover{background:var(--goldlit)}
+  main{padding-block:44px 64px;display:flex;flex-direction:column;gap:44px}
+  h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.1;margin:0}
+  h1{font-size:clamp(2.4rem,5vw,3.6rem);color:var(--goldlit);text-wrap:balance}
+  h2{font-size:clamp(1.7rem,3vw,2.2rem);color:var(--goldlit)}
+  h3{font-size:1.3rem;color:var(--bone)}
+  .lede{font-size:1.15rem;max-width:62ch;margin:14px 0 0;color:var(--ash)}
+  .lede b{color:var(--bone);font-weight:600;font-variant-numeric:tabular-nums}
+  .stamp{font-size:.85rem;color:var(--ash);margin:10px 0 0;font-variant-numeric:tabular-nums}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+  .kpi{border-top:2px solid var(--gold);background:var(--panel);padding:16px 18px 18px}
+  .kpi .lbl{font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ash)}
+  .kpi .val{font-family:var(--display);font-size:3.1rem;line-height:1;margin-top:8px;color:var(--bone);font-variant-numeric:lining-nums tabular-nums}
+  .kpi .val small{font-size:1.6rem;color:var(--ash)}
+  .kpi .sub{font-size:.88rem;color:var(--ash);margin-top:6px}
+  section{display:flex;flex-direction:column;gap:16px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:18px 20px 20px;min-width:0}
+  .note{font-size:.88rem;color:var(--ash);margin:4px 0 0;max-width:62ch}
+  .legend{display:flex;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--ash);margin-top:10px}
+  .legend span{display:inline-flex;align-items:center;gap:7px}
+  .legend i{width:11px;height:11px;border-radius:2px;display:inline-block}
+  .chart{position:relative;min-height:210px;margin-top:12px}
+  .chart.h{min-height:150px}
+  .chart svg{display:block;width:100%;overflow:visible}
+  .chart text{font:13px var(--text);fill:var(--ash);font-variant-numeric:tabular-nums}
+  .chart text.v{fill:var(--bone)}
+  .tip{position:absolute;pointer-events:none;background:#1b1316;border:1px solid var(--line);box-shadow:0 6px 18px rgba(0,0,0,.5);border-radius:3px;padding:6px 10px;font-size:.85rem;white-space:nowrap;z-index:2}
+  .tip strong{display:block;color:var(--bone);font-weight:600}
+  .tip div{color:var(--ash);font-variant-numeric:tabular-nums}
+  .empty{color:var(--ash);font-size:.9rem;padding:20px 0}
+  .tablewrap{overflow-x:auto;margin-top:10px}
+  table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:.95rem}
+  th{text-align:right;font-weight:600;font-size:.8rem;letter-spacing:.04em;text-transform:uppercase;color:var(--ash);padding:6px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+  td{text-align:right;padding:7px 8px;border-bottom:1px solid var(--line)}
+  th:first-child,td:first-child{text-align:left}
+  tbody tr:last-child td{border-bottom:0}
+  .about{font-size:.92rem;color:var(--ash)}
+  .about ul{padding-left:1.1em;margin:8px 0 0;max-width:72ch}
+  .about li{margin-bottom:6px}
+  .skel{display:inline-block;min-width:1.4em;color:transparent;background:var(--line);border-radius:3px}
+  @media (prefers-reduced-motion:no-preference){.skel{animation:pulse 1.2s ease-in-out infinite alternate}@keyframes pulse{to{opacity:.45}}}
+  footer{border-top:1px solid var(--line);padding-block:22px 34px;font-size:.88rem;color:var(--ash)}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:8px 22px}
+  footer a{color:var(--ash)}
+  footer a:hover{color:var(--goldlit)}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/logo-256.png" alt="" width="36" height="36">Master <em>of the</em> Night</a>
+    <a class="play" href="https://game.masterofthenight.com/">Jouer</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <header>
+    <h1>La nuit en chiffres</h1>
+    <p class="lede" id="lede"><b data-k="actifs_7j" class="skel">00</b> installations ont ouvert le jeu ces 7 derniers jours, dont <b data-k="actifs_aujourdhui" class="skel">0</b> aujourd'hui. Elles ont lancé <b data-k="parties_7j" class="skel">00</b> parties, dont <b data-k="pct_terminees_7j" class="skel">00</b> % jouées jusqu'au vainqueur et <b data-k="pct_en_ligne_7j" class="skel">00</b> % en ligne.</p>
+    <p class="stamp" id="stamp">Chargement des chiffres…</p>
+  </header>
+
+  <div class="kpis">
+    <div class="kpi">
+      <div class="lbl">Installations actives · 7 jours</div>
+      <div class="val"><span data-k="actifs_7j" class="skel">00</span></div>
+      <div class="sub"><span data-k="installations_total">—</span> au total depuis le <span data-d="installations">—</span></div>
+    </div>
+    <div class="kpi">
+      <div class="lbl">Parties lancées · 7 jours</div>
+      <div class="val"><span data-k="parties_7j" class="skel">00</span></div>
+      <div class="sub"><span data-k="pct_en_ligne_7j">—</span> % en ligne</div>
+    </div>
+    <div class="kpi">
+      <div class="lbl">Parties menées au bout · 7 jours</div>
+      <div class="val"><span data-k="pct_terminees_7j" class="skel">00</span><small> %</small></div>
+      <div class="sub">jusqu'à ce qu'un vainqueur soit désigné</div>
+    </div>
+    <div class="kpi">
+      <div class="lbl">Joueurs en ligne · 7 jours</div>
+      <div class="val"><span data-k="joueurs_en_ligne_7j" class="skel">00</span></div>
+      <div class="sub">comptes distincts en partie en ligne</div>
+    </div>
+  </div>
+
+  <section id="joueurs">
+    <h2>Qui joue</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Installations actives par jour</h3>
+        <p class="note">Un navigateur ou un appareil qui a ouvert le jeu ce jour-là, compté une fois.</p>
+        <div class="legend"><span><i style="background:var(--goldlit)"></i>Premier jour</span><span><i style="background:var(--gold);opacity:.55"></i>Déjà venues</span></div>
+        <div class="chart" id="c-actifs"></div>
+      </div>
+      <div class="card">
+        <h3>Installations par plateforme</h3>
+        <p class="note">Depuis le premier relevé.</p>
+        <div class="chart h" id="c-plateformes"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="parties">
+    <h2>Les parties</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Parties lancées par jour</h3>
+        <div class="legend"><span><i style="background:var(--gold)"></i>Contre les bots</span><span><i style="background:var(--cool)"></i>En ligne</span></div>
+        <div class="chart" id="c-parties"></div>
+      </div>
+      <div class="card">
+        <h3>Joueurs en ligne par jour</h3>
+        <p class="note">Comptes distincts ayant joué une partie en ligne jusqu'au bout.</p>
+        <div class="chart" id="c-enligne"></div>
+      </div>
+      <div class="card">
+        <h3>Selon le nombre de sièges</h3>
+        <div class="tablewrap">
+          <table>
+            <thead><tr><th>Sièges</th><th>Parties</th><th>En ligne</th><th>Menées au bout</th><th>Tours</th></tr></thead>
+            <tbody id="t-sieges"></tbody>
+          </table>
+        </div>
+        <p class="note">Tours : moyenne des parties menées au bout.</p>
+      </div>
+      <div class="card">
+        <h3>Versions récentes</h3>
+        <div class="tablewrap">
+          <table>
+            <thead><tr><th>Version</th><th>Installations</th><th>Parties</th></tr></thead>
+            <tbody id="t-versions"></tbody>
+          </table>
+        </div>
+        <p class="note">Installations ayant ouvert la version au moins un jour, et parties lancées depuis elle.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="a-propos">
+    <h2>D'où viennent ces chiffres</h2>
+    <ul>
+      <li>Les installations viennent du signe de vie que le jeu envoie au plus une fois par jour, compté depuis le <span data-d="installations">—</span>.</li>
+      <li>Les parties viennent du relevé anonyme de fin de partie, compté depuis le <span data-d="parties">—</span>. Une partie en ligne peut être relevée par chaque joueur humain de la table.</li>
+      <li>Les joueurs en ligne viennent des statistiques de partie des comptes, comptées depuis le <span data-d="en_ligne">—</span>.</li>
+      <li>Rien ici ne permet de reconnaître un joueur. Les jours sont comptés en heure UTC, et les courbes couvrent les 60 derniers jours. Le détail de ce qui est relevé est dans la <a href="/fr/privacy/">politique de confidentialité</a>.</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="/">Accueil</a>
+    <a href="https://game.masterofthenight.com/">Jouer</a>
+    <a href="https://discord.gg/pVcYAQx2f" rel="noopener">Discord</a>
+    <a href="/fr/privacy/">Confidentialité</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  var NS = "http://www.w3.org/2000/svg";
+  var MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
+  var PLATEFORMES = { "web-itch": "Web · itch.io", "web-motn": "Web · masterofthenight.com", "web": "Web · GitHub Pages", "web-pages": "Web · GitHub Pages", "windows": "Windows", "android": "Android", "ios": "iOS", "editor": "Éditeur" };
+  var nf = new Intl.NumberFormat("fr-FR");
+  var data = null;
+
+  function n(v) { return v == null || isNaN(+v) ? "—" : nf.format(+v); }
+  function court(s) { var p = String(s).split("-"); return p[2] + "/" + p[1]; }
+  function long(s) { var p = String(s).split("-"); return (+p[2]) + (p[2] === "01" ? "er" : "") + " " + MOIS[+p[1] - 1] + " " + p[0]; }
+  function el(name, attrs, parent) {
+    var e = document.createElementNS(NS, name);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  function textW(t) { try { return t.getComputedTextLength(); } catch (e) { return 0; } }
+  function vide(box, msg) { box.replaceChildren(); var d = document.createElement("div"); d.className = "empty"; d.textContent = msg; box.appendChild(d); }
+
+  function tipper(box) {
+    var tip = document.createElement("div");
+    tip.className = "tip"; tip.hidden = true; box.appendChild(tip);
+    return {
+      show: function (x, y, title, lines) {
+        tip.replaceChildren();
+        var s = document.createElement("strong"); s.textContent = title; tip.appendChild(s);
+        lines.forEach(function (l) { var d = document.createElement("div"); d.textContent = l; tip.appendChild(d); });
+        tip.hidden = false;
+        var W = box.clientWidth, tw = tip.offsetWidth;
+        tip.style.left = Math.max(0, Math.min(x - tw / 2, W - tw)) + "px";
+        tip.style.top = Math.max(0, y - tip.offsetHeight - 8) + "px";
+      },
+      hide: function () { tip.hidden = true; }
+    };
+  }
+
+  function niceMax(v) {
+    if (v <= 5) return 5;
+    var p = Math.pow(10, Math.floor(Math.log10(v))), m = v / p;
+    return (m <= 1 ? 1 : m <= 2 ? 2 : m <= 2.5 ? 2.5 : m <= 5 ? 5 : 10) * p;
+  }
+
+  // Barres verticales empilées. series = [{key, label, color, opacity}]
+  function stack(box, rows, o) {
+    box.replaceChildren();
+    if (!rows || !rows.length) return vide(box, "Pas encore de données.");
+    var W = Math.max(260, box.clientWidth), H = 210, mt = 20, mb = 24;
+    var totals = rows.map(function (r) { return o.series.reduce(function (a, s) { return a + (+r[s.key] || 0); }, 0); });
+    var max = niceMax(Math.max.apply(null, totals.concat([1])));
+    var svg = el("svg", { viewBox: "0 0 " + W + " " + H, height: H, role: "img", "aria-label": o.aria }, box);
+    var ticks = [0, max / 2, max].filter(function (t) { return Number.isInteger(t); });
+    var y = function (v) { return H - mb - (v / max) * (H - mb - mt); };
+    var tl = ticks.map(function (t) { var e = el("text", { "text-anchor": "end", dy: "0.32em" }, svg); e.textContent = n(t); return e; });
+    var ml = Math.ceil(Math.max.apply(null, tl.map(textW).concat([0]))) + 10;
+    ticks.forEach(function (t, i) {
+      tl[i].setAttribute("x", ml - 8); tl[i].setAttribute("y", y(t));
+      el("line", { x1: ml, x2: W, y1: y(t), y2: y(t), stroke: t === 0 ? "#3a2a2e" : "var(--grid)" }, svg);
+    });
+    var step = (W - ml) / rows.length, bw = Math.max(2, Math.min(56, step * 0.72)), off = (step - bw) / 2;
+    rows.forEach(function (r, i) {
+      var acc = 0, x = ml + i * step + off;
+      o.series.forEach(function (s) {
+        var v = +r[s.key] || 0;
+        if (v > 0) el("rect", { x: x, width: bw, y: y(acc + v), height: Math.max(0, y(acc) - y(acc + v)), fill: s.color, "fill-opacity": s.opacity || 1 }, svg);
+        acc += v;
+      });
+      if (bw >= 16 && totals[i]) { var t = el("text", { "class": "v", x: x + bw / 2, y: y(totals[i]) - 6, "text-anchor": "middle" }, svg); t.textContent = n(totals[i]); }
+    });
+    var labels = rows.map(function (r, i) { var t = el("text", { x: ml + i * step + step / 2, y: H - 6, "text-anchor": "middle" }, svg); t.textContent = court(r[o.x]); return t; });
+    var lw = Math.max.apply(null, labels.map(textW).concat([0]));
+    var every = Math.max(1, Math.ceil((lw + 10) / step));
+    labels.forEach(function (t, i) { if ((rows.length - 1 - i) % every) t.setAttribute("display", "none"); });
+    var tip = tipper(box);
+    rows.forEach(function (r, i) {
+      var hit = el("rect", { x: ml + i * step, width: step, y: 0, height: H - mb, fill: "transparent" }, svg);
+      var show = function () {
+        var k = box.clientWidth / W, lines = o.series.map(function (s) { return s.label + " : " + n(r[s.key] || 0); });
+        (o.extra || []).forEach(function (e) { lines.push(e.label + " : " + n(r[e.key])); });
+        tip.show((ml + i * step + step / 2) * k, y(totals[i]) * k, long(r[o.x]), lines);
+      };
+      hit.addEventListener("pointerenter", show);
+      hit.addEventListener("pointerdown", show);
+      hit.addEventListener("pointerleave", tip.hide);
+    });
+  }
+
+  function hbars(box, rows, o) {
+    box.replaceChildren();
+    if (!rows || !rows.length) return vide(box, "Pas encore de données.");
+    var W = Math.max(260, box.clientWidth), rh = 32, H = rows.length * rh;
+    var svg = el("svg", { viewBox: "0 0 " + W + " " + H, height: H, role: "img", "aria-label": o.aria }, box);
+    var lt = rows.map(function (r, i) { var t = el("text", { "class": "v", x: 0, y: i * rh + rh / 2, dy: "0.32em" }, svg); t.textContent = o.label(r); return t; });
+    var ml = Math.min(Math.ceil(Math.max.apply(null, lt.map(textW))) + 14, Math.round(W * 0.55));
+    var vt = rows.map(function (r) { var t = el("text", {}, svg); t.textContent = n(r[o.key]); return t; });
+    var mv = Math.ceil(Math.max.apply(null, vt.map(textW))) + 10;
+    var max = Math.max.apply(null, rows.map(function (r) { return +r[o.key] || 0; }).concat([1]));
+    var span = Math.max(20, W - ml - mv);
+    rows.forEach(function (r, i) {
+      var w = Math.max(2, (+r[o.key] || 0) / max * span);
+      el("rect", { x: ml, y: i * rh + 8, width: w, height: rh - 16, rx: 2, fill: o.color }, svg);
+      vt[i].setAttribute("x", ml + w + 7); vt[i].setAttribute("y", i * rh + rh / 2); vt[i].setAttribute("dy", "0.32em");
+    });
+  }
+
+  function table(id, rows, cols) {
+    var tb = document.getElementById(id);
+    tb.replaceChildren();
+    (rows || []).forEach(function (r) {
+      var tr = document.createElement("tr");
+      cols.forEach(function (c, j) {
+        var td = document.createElement("td");
+        td.textContent = j === 0 ? String(r[c.k]) : n(r[c.k]) + (c.suffix && r[c.k] != null ? c.suffix : "");
+        tr.appendChild(td);
+      });
+      tb.appendChild(tr);
+    });
+  }
+
+  function draw() {
+    if (!data) return;
+    var c = data.chiffres || {};
+    document.querySelectorAll("[data-k]").forEach(function (e) { e.textContent = n(c[e.getAttribute("data-k")]); e.classList.remove("skel"); });
+    document.querySelectorAll("[data-d]").forEach(function (e) { var d = (data.depuis || {})[e.getAttribute("data-d")]; e.textContent = d ? long(d) : "—"; });
+    var t = new Date(data.genere_le);
+    document.getElementById("stamp").textContent = isNaN(t) ? "" : "Chiffres arrêtés le " + t.toLocaleString("fr-FR", { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" }) + ", rafraîchis toutes les 5 minutes.";
+
+    stack(document.getElementById("c-actifs"), (data.actifs_jour || []).map(function (r) { return { jour: r.jour, nouveaux: r.nouveaux, revenus: (+r.actifs || 0) - (+r.nouveaux || 0) }; }), {
+      x: "jour", aria: "Installations actives par jour",
+      series: [{ key: "nouveaux", label: "Premier jour", color: "var(--goldlit)" }, { key: "revenus", label: "Déjà venues", color: "var(--gold)", opacity: 0.55 }]
+    });
+    hbars(document.getElementById("c-plateformes"), data.plateformes, {
+      key: "installations", color: "var(--gold)", aria: "Installations par plateforme",
+      label: function (r) { return PLATEFORMES[r.plateforme] || r.plateforme; }
+    });
+    stack(document.getElementById("c-parties"), data.parties_jour, {
+      x: "jour", aria: "Parties lancées par jour, contre les bots et en ligne",
+      series: [{ key: "hors_ligne", label: "Contre les bots", color: "var(--gold)" }, { key: "en_ligne", label: "En ligne", color: "var(--cool)" }],
+      extra: [{ key: "terminees", label: "Menées au bout" }]
+    });
+    stack(document.getElementById("c-enligne"), data.joueurs_en_ligne, {
+      x: "jour", aria: "Joueurs distincts en ligne par jour",
+      series: [{ key: "joueurs", label: "Joueurs", color: "var(--cool)" }],
+      extra: [{ key: "parties", label: "Parties en ligne" }]
+    });
+    table("t-sieges", data.sieges, [{ k: "sieges" }, { k: "parties" }, { k: "en_ligne" }, { k: "pct_terminees", suffix: " %" }, { k: "tours_moyens" }]);
+    table("t-versions", data.versions, [{ k: "version" }, { k: "installations" }, { k: "parties" }]);
+  }
+
+  fetch("/stats/data.json", { headers: { Accept: "application/json" } })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (j) { data = j; draw(); })
+    .catch(function () {
+      document.getElementById("stamp").textContent = "Les chiffres n'ont pas pu être chargés. Réessayez dans quelques minutes.";
+      document.querySelectorAll(".skel").forEach(function (e) { e.classList.remove("skel"); e.textContent = "—"; });
+      ["c-actifs", "c-plateformes", "c-parties", "c-enligne"].forEach(function (id) { vide(document.getElementById(id), "Indisponible pour le moment."); });
+    });
+
+  var timer = null, lastW = window.innerWidth;
+  window.addEventListener("resize", function () {
+    if (window.innerWidth === lastW) return;
+    lastW = window.innerWidth;
+    clearTimeout(timer); timer = setTimeout(draw, 150);
+  });
+})();
+</script>
+</body>
+</html>

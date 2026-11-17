@@ -31,9 +31,45 @@ function langOfPath(pathname) {
   return m && LANGS.includes(m[1]) ? m[1] : null;
 }
 
+// /stats/data.json : les totaux d'usage du jeu (fonction Supabase stats_usage, qui ne renvoie que des comptes),
+// gardés 5 minutes dans le cache de Cloudflare pour que les visites ne frappent pas la base à chaque fois.
+const STATS_TTL = 300;
+
+async function statsData(request, env, ctx) {
+  const cache = caches.default;
+  const key = new Request(new URL("/stats/data.json", request.url).toString(), { method: "GET" });
+  const hit = await cache.match(key);
+  if (hit) return hit;
+  let upstream;
+  try {
+    upstream = await fetch(`${env.SUPABASE_URL}/rest/v1/rpc/stats_usage`, {
+      method: "POST",
+      headers: { apikey: env.SUPABASE_KEY, "Content-Type": "application/json" },
+      body: "{}",
+    });
+  } catch (e) {
+    upstream = null;
+  }
+  if (!upstream || !upstream.ok) {
+    return new Response('{"erreur":"statistiques indisponibles"}', {
+      status: 502,
+      headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" },
+    });
+  }
+  const response = new Response(await upstream.text(), {
+    headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": `public, max-age=${STATS_TTL}` },
+  });
+  ctx.waitUntil(cache.put(key, response.clone()));
+  return response;
+}
+
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
+
+    if (url.pathname === "/stats/data.json" && request.method === "GET") {
+      return statsData(request, env, ctx);
+    }
 
     if (url.pathname === "/" || url.pathname === "/index.html") {
       const lang = fromCookie(request) || fromAcceptLanguage(request) || DEFAULT;

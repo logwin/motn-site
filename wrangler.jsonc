@@ -8,6 +8,12 @@
   "compatibility_date": "2026-11-01",
   "workers_dev": false,
   "preview_urls": false,
+  // Page /stats : le Worker lit la fonction stats_usage() avec la clé PUBLIABLE de Supabase (la même que le jeu,
+  // faite pour être publique ; la fonction ne renvoie que des totaux).
+  "vars": {
+    "SUPABASE_URL": "https://yoosqngbsdyhocdzzwjj.supabase.co",
+    "SUPABASE_KEY": "sb_publishable_CUOPeEwliBkkj-jAusxIYQ_cM6LL-y8"
+  },
   "assets": {
     "directory": "./public",
     "binding": "ASSETS",
